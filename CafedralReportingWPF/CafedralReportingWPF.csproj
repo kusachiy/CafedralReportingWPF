@@ -100,11 +100,7 @@
     </ApplicationDefinition>
     <Page Include="Dialogs\EmployeeWindow.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Dialogs\WorkloadsScreen.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -117,9 +113,6 @@
     <Compile Include="DataSource\Context.cs" />
     <Compile Include="Dialogs\EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Dialogs\WorkloadsScreen.xaml.cs">
-      <DependentUpon>WorkloadsScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

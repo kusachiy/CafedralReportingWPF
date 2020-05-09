@@ -1,4 +1,5 @@
 ﻿using CafedralReportingWPF.DataSource;
+using CafedralReportingWPF.Dialogs;
 using CafedralReportingWPF.Models;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,8 @@ namespace CafedralReportingWPF
             InitializeComponent();
 
             context = new Context();
-            context.Employees.Load();
-            this.DataContext = context.Employees.Local.ToBindingList();
+            context.Workflows.Load();
+            this.DataContext = context.Workflows.Local.ToBindingList();
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -43,7 +44,7 @@ namespace CafedralReportingWPF
                 context.SaveChanges();
             }
         }
-
+        /*
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             if (employeesList.SelectedItem == null) return;
@@ -77,10 +78,15 @@ namespace CafedralReportingWPF
             context.Employees.Remove(employee);
             context.SaveChanges();
         }
-
+        */
         private void Report_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            context.SaveChanges();
         }
     }
 }

@@ -26,11 +26,11 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("WorkflowYearId")]
         public AcademicYear WorkflowYear { get; set; }
 
-        public bool IsEvective { get; set; }
+        public bool IsElective { get; set; }
         public bool IsDS { get; set; }
 
         public int Lectures { get; set; }
-        public int Practicies { get; set; }
+        public int Practices { get; set; }
         public int Labs { get; set; }
 
         public bool KR { get; set; }
