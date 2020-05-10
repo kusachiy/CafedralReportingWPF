@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CafedralReportingWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600">
+        Title="MainWindow"
+        Loaded="Window_Loaded"
+        Height="600" Width="600">
     <DockPanel>
         <DataGrid x:Name="myDataGrid" x:FieldModifier="public" ItemsSource="{Binding}"></DataGrid>
         <Button Click="Button_Click"></Button>

@@ -1,5 +1,6 @@
 ﻿using CafedralReportingWPF.DataSource;
 using CafedralReportingWPF.Dialogs;
+using CafedralReportingWPF.Helpers;
 using CafedralReportingWPF.Models;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,14 @@ namespace CafedralReportingWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Context context; 
+        private Context _context; 
         public MainWindow()
         {
             InitializeComponent();
 
-            context = new Context();
-            context.Workflows.Load();
-            this.DataContext = context.Workflows.Local.ToBindingList();
+            _context = DbContextSingleton.GetContext();
+            _context.Workflows.Load();
+            this.DataContext = _context.Workflows.Local.ToBindingList();
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -40,8 +41,8 @@ namespace CafedralReportingWPF
             if (employeeWindow.ShowDialog() == true)
             {
                 Employee newEmployee = employeeWindow.Employee;
-                context.Employees.Add(newEmployee);
-                context.SaveChanges();
+                _context.Employees.Add(newEmployee);
+                _context.SaveChanges();
             }
         }
         /*
@@ -86,7 +87,18 @@ namespace CafedralReportingWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            context.SaveChanges();
+            _context.SaveChanges();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            /*
+            FileLoader fileLoader = new FileLoader();
+            var entities = fileLoader.ImportWorkflow();*/
+            _context.EmployeeToDiscipline.Load();
+            var c = _context.EmployeeToDiscipline.Local.ToList();
+            _context.EmployeeToDiscipline.Include(etd => etd.Discipline).Include(etd => etd.Employee).Load();
+            var etds = _context.EmployeeToDiscipline.ToList();
         }
     }
 }
