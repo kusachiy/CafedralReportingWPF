@@ -113,7 +113,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataSource\Context.cs" />
-    <Compile Include="DataSource\DbWorkers\DisciplineWorker.cs" />
+    <Compile Include="DataSource\DbWorkers\WorkflowWorker.cs" />
     <Compile Include="Dialogs\EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
     </Compile>

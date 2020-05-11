@@ -1,4 +1,5 @@
 ﻿using CafedralReportingWPF.DataSource;
+using CafedralReportingWPF.DataSource.DbWorkers;
 using CafedralReportingWPF.Dialogs;
 using CafedralReportingWPF.Helpers;
 using CafedralReportingWPF.Models;
@@ -91,14 +92,13 @@ namespace CafedralReportingWPF
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            /*
+        { 
+            
             FileLoader fileLoader = new FileLoader();
-            var entities = fileLoader.ImportWorkflow();*/
-            _context.EmployeeToDiscipline.Load();
-            var c = _context.EmployeeToDiscipline.Local.ToList();
-            _context.EmployeeToDiscipline.Include(etd => etd.Discipline).Include(etd => etd.Employee).Load();
-            var etds = _context.EmployeeToDiscipline.ToList();
+            var entities = fileLoader.ImportWorkflow();
+            //_context.EmployeeToDiscipline.Include(etd => etd.Discipline).Include(etd => etd.Employee).Load();
+            //var etds = _context.EmployeeToDiscipline.ToList();
+            WorkflowWorker.ImportWorkflow(_context, entities);
         }
     }
 }
