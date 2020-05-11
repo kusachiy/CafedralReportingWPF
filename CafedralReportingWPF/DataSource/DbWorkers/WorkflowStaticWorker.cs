@@ -3,16 +3,18 @@ using CafedralReportingWPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CafedralReportingWPF.DataSource.DbWorkers
 {
-    public static class WorkflowWorker
+    public static class WorkflowStaticWorker
     {
         public static void ImportWorkflow(Context context, List<ImportWorkflowModel> models)
         {
             var years = context.AcademicYears.ToList();
+            var groups = context.StudyGroups.ToList();
             var disciplines = context.Disciplines.ToList();
             var semesters = context.Semesters.ToList();
             var etds = context.EmployeeToDiscipline.ToList();
@@ -23,15 +25,19 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                 var discipline = disciplines.FirstOrDefault(d => d.DisciplineName == model.DisciplineName);
                 var semester = semesters.FirstOrDefault(s => s.SemesterNumber == model.Semester);
                 var etd = etds.FirstOrDefault(e => e.DisciplineId == discipline.Id);
+                var group = groups.FirstOrDefault(g => g.EntryYear == year.StartYear-semester.Course+1);
                 var newWorkflow = new Workflow
                 {
                     Description = "",
                     DisciplineId = discipline.Id,
                     SemesterId = semester.Id,
-                    GroupId = 1,
+                    GroupId = group.Id,
                     WorkflowYearId = year.Id,
-                    IsElective = model.IsElective,
-                    IsDS = model.IsDS,
+                    /*IsElective = model.IsElective,
+                    IsDS = model.IsDS,*/
+                    IsElective = false,
+                    IsDS = false,
+                    //----
                     Lectures = model.Lectures,
                     Practices = model.Practices,
                     Labs = model.Labs,
@@ -48,6 +54,12 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                 workflows.Add(newWorkflow);
             }
             context.SaveChanges();
+        }
+
+        public static List<Workflow> GetAllWorkflows(Context context)
+        {
+            context.Workflows.Include(w => w.Employee).Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Load();
+            return context.Workflows.ToList();
         }
     }
 }

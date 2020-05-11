@@ -100,7 +100,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Dialogs\EmployeeWindow.xaml">
+    <Compile Include="DataSource\DbWorkers\SemesterReportWorker.cs" />
+    <Compile Include="Models\StudyGroup.cs" />
+    <Compile Include="Reports\Datasets\SemesterDataset.cs">
+      <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\SemesterDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SemesterReportPage.xaml.cs">
+      <DependentUpon>SemesterReportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuccessPage.xaml.cs">
+      <DependentUpon>SuccessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkflowPage.xaml.cs">
+      <DependentUpon>WorkflowPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Dialogs\EmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
@@ -113,8 +132,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DataSource\Context.cs" />
-    <Compile Include="DataSource\DbWorkers\WorkflowWorker.cs" />
-    <Compile Include="Dialogs\EmployeeWindow.xaml.cs">
+    <Compile Include="DataSource\DbWorkers\WorkflowStaticWorker.cs" />
+    <Compile Include="Views\Dialogs\EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DbContextSingleton.cs" />
@@ -124,6 +143,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\SemesterReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SuccessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkflowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Abstract\BaseModel.cs" />
@@ -150,7 +181,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Controls\Semester.rdlc" />
     <None Include="Data\Input\input.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -162,12 +193,26 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Reports\Datasets\SemesterDataset.xsc">
+      <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\SemesterDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SemesterDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\SemesterDataset.xss">
+      <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\success.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

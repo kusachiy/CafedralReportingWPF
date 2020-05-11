@@ -21,6 +21,8 @@ namespace CafedralReportingWPF.Models
         public Semester Semester { get; set; }
 
         public int GroupId { get; set; }
+        [ForeignKey("GroupId")]
+        public StudyGroup Group { get; set; }
 
         public int WorkflowYearId { get; set; }
         [ForeignKey("WorkflowYearId")]

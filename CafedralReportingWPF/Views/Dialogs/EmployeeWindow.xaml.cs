@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CafedralReportingWPF.Dialogs
+namespace CafedralReportingWPF.Views.Dialogs
 {
     /// <summary>
     /// Interaction logic for EmployeeWindow.xaml

@@ -1,23 +1,9 @@
 ﻿using CafedralReportingWPF.DataSource;
 using CafedralReportingWPF.DataSource.DbWorkers;
-using CafedralReportingWPF.Dialogs;
 using CafedralReportingWPF.Helpers;
-using CafedralReportingWPF.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CafedralReportingWPF.Views;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CafedralReportingWPF
 {
@@ -26,79 +12,42 @@ namespace CafedralReportingWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Context _context; 
+        Page _currentPage;
+        WorkflowPage _workflowControl;
+        SuccessPage _successPage;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            _successPage = new SuccessPage();
+            _workflowControl = new WorkflowPage();
+            _currentPage = _workflowControl;
+        }   
 
-            _context = DbContextSingleton.GetContext();
-            _context.Workflows.Load();
-            this.DataContext = _context.Workflows.Local.ToBindingList();
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
+        private void Click_Workload_Control(object sender, RoutedEventArgs e)
         {
-            EmployeeWindow employeeWindow = new EmployeeWindow(new Employee());
-            if (employeeWindow.ShowDialog() == true)
-            {
-                Employee newEmployee = employeeWindow.Employee;
-                _context.Employees.Add(newEmployee);
-                _context.SaveChanges();
-            }
+            SetFrameContent(_workflowControl);
         }
-        /*
-        private void Edit_Click(object sender, RoutedEventArgs e)
+        private void Click_Workload_Report(object sender, RoutedEventArgs e)
         {
-            if (employeesList.SelectedItem == null) return;
-            // получаем выделенный объект
-            Employee employee = employeesList.SelectedItem as Employee;
-
-            EmployeeWindow employeeWindow = new EmployeeWindow(new Employee
-            {
-                Id = employee.Id,
-                FullName = employee.FullName
-            });
-
-            if (employeeWindow.ShowDialog() == true)
-            {
-                // получаем измененный объект
-                employee = context.Employees.Find(employeeWindow.Employee.Id);
-                if (employee != null)
-                {                    
-                    employee.FullName = employeeWindow.Employee.FullName;
-                    context.Entry(employee).State = EntityState.Modified;
-                    context.SaveChanges();
-                }
-            }
+            SetFrameContent(null);
         }
-
-        private void Delete_Click(object sender, RoutedEventArgs e)
+        private void Click_Import(object sender, RoutedEventArgs e)
         {
-            if (employeesList.SelectedItem == null) return;
+            SetFrameContent(null);
+            var context = DbContextSingleton.GetContext();            
+            FileLoader loader = new FileLoader();
+            WorkflowStaticWorker.ImportWorkflow(context,loader.ImportWorkflow());
+            SetFrameContent(_successPage);
 
-            Employee employee = employeesList.SelectedItem as Employee;
-            context.Employees.Remove(employee);
-            context.SaveChanges();
         }
-        */
-        private void Report_Click(object sender, RoutedEventArgs e)
+
+        private void SetFrameContent(Page page)
         {
-
+            _currentPage = page;
+            myFrame.Content = page;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            _context.SaveChanges();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        { 
-            
-            FileLoader fileLoader = new FileLoader();
-            var entities = fileLoader.ImportWorkflow();
-            //_context.EmployeeToDiscipline.Include(etd => etd.Discipline).Include(etd => etd.Employee).Load();
-            //var etds = _context.EmployeeToDiscipline.ToList();
-            WorkflowWorker.ImportWorkflow(_context, entities);
-        }
     }
 }

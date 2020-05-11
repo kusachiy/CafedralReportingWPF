@@ -11,8 +11,8 @@ namespace CafedralReportingWPF.Helpers
         public string Year { get; set; }
         public int Semester { get; set; }
         public string DisciplineName { get; set; }
-        public bool IsElective { get; set; }
-        public bool IsDS { get; set; }
+       /* public bool IsElective { get; set; }
+        public bool IsDS { get; set; }*/
         public int Lectures { get; set; }
         public int Practices { get; set; }
         public int Labs { get; set; }
