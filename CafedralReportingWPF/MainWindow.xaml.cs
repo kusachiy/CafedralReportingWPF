@@ -15,13 +15,14 @@ namespace CafedralReportingWPF
         Page _currentPage;
         WorkflowPage _workflowControl;
         SuccessPage _successPage;
-
+        SemesterReportPage _semReportPage;
 
         public MainWindow()
         {
             InitializeComponent();
             _successPage = new SuccessPage();
             _workflowControl = new WorkflowPage();
+            _semReportPage = new SemesterReportPage();
             _currentPage = _workflowControl;
         }   
 
@@ -31,7 +32,7 @@ namespace CafedralReportingWPF
         }
         private void Click_Workload_Report(object sender, RoutedEventArgs e)
         {
-            SetFrameContent(null);
+            SetFrameContent(_semReportPage);
         }
         private void Click_Import(object sender, RoutedEventArgs e)
         {

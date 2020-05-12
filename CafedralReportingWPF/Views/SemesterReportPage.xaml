@@ -12,8 +12,18 @@
     mc:Ignorable="d">
 
     <Grid>
-        <WindowsFormsHost HorizontalAlignment="Center" VerticalAlignment="Center">
-            <winforms:ReportViewer x:Name="_reportViewer"></winforms:ReportViewer>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Label>Report REEEEPOOOOORT</Label>
+        </DockPanel>
+        <WindowsFormsHost
+            Grid.Row="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+            <winforms:ReportViewer x:Name="_reportViewer" />
         </WindowsFormsHost>
 
     </Grid>
