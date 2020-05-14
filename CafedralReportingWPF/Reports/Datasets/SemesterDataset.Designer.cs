@@ -20,7 +20,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Semester")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SemesterDataset")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class SemesterDataset : global::System.Data.DataSet {
         
@@ -199,7 +199,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Semester";
+            this.DataSetName = "SemesterDataset";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/Semester.xsd";
             this.EnforceConstraints = true;
@@ -300,6 +300,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             private global::System.Data.DataColumn columnZachet;
             
             private global::System.Data.DataColumn columnEmployee;
+            
+            private global::System.Data.DataColumn columnCountOfWeeks;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -424,6 +426,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CountOfWeeksColumn {
+                get {
+                    return this.columnCountOfWeeks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int Lections, int Practices, int Labs, int CountOfStudents, int KR, int KP, int Examen, int Zachet, string Employee) {
+            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int Lections, int Practices, int Labs, int CountOfStudents, int KR, int KP, int Examen, int Zachet, string Employee, int CountOfWeeks) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GroupName,
@@ -472,7 +482,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         KP,
                         Examen,
                         Zachet,
-                        Employee};
+                        Employee,
+                        CountOfWeeks};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -506,6 +517,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnExamen = base.Columns["Examen"];
                 this.columnZachet = base.Columns["Zachet"];
                 this.columnEmployee = base.Columns["Employee"];
+                this.columnCountOfWeeks = base.Columns["CountOfWeeks"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -533,6 +545,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnZachet);
                 this.columnEmployee = new global::System.Data.DataColumn("Employee", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployee);
+                this.columnCountOfWeeks = new global::System.Data.DataColumn("CountOfWeeks", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountOfWeeks);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -851,6 +865,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CountOfWeeks {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.CountOfWeeksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountOfWeeks\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CountOfWeeksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGroupNameNull() {
                 return this.IsNull(this.tableDataTable1.GroupNameColumn);
             }
@@ -979,6 +1009,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmployeeNull() {
                 this[this.tableDataTable1.EmployeeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCountOfWeeksNull() {
+                return this.IsNull(this.tableDataTable1.CountOfWeeksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCountOfWeeksNull() {
+                this[this.tableDataTable1.CountOfWeeksColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -2141,8 +2141,22 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Lections.Value+Fields!Practices.Value+Fields!Labs.Value</Value>
-                              <Style />
+                              <Value>= Fields!CountOfWeeks.Value * Fields!Lections.Value
+
++ Fields!CountOfWeeks.Value * Fields!Practices.Value
+
++ Fields!CountOfWeeks.Value * iif(Floor(Fields!CountOfStudents.Value/9)&gt;=1,Floor(Fields!CountOfStudents.Value/9),1) * Fields!Labs.Value
+ 
++ Fields!CountOfStudents.Value * 3 * iif(Fields!KR.Value,1,0) 
+
++ Fields!CountOfStudents.Value * 0.33 * iif(Fields!Examen.Value,1,0) 
+
++ Fields!CountOfStudents.Value * iif(Fields!Zachet.Value,1,0) * 0.25
+
++ Fields!CountOfWeeks.Value * Fields!Lections.Value * 0.05</Value>
+                              <Style>
+                                <Format>0.0;(0.0)</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -2155,26 +2169,6 @@
                         <Border>
                           <Style>Solid</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -3316,44 +3310,48 @@
         </Field>
         <Field Name="Lections">
           <DataField>Lections</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Practices">
           <DataField>Practices</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Labs">
           <DataField>Labs</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="CountOfStudents">
           <DataField>CountOfStudents</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="KR">
           <DataField>KR</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="KP">
           <DataField>KP</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Examen">
           <DataField>Examen</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Zachet">
           <DataField>Zachet</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Employee">
           <DataField>Employee</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CountOfWeeks">
+          <DataField>CountOfWeeks</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Semester</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\kusachiy\Desktop\УЧЁБА\Диплом\Проект\CafedralReportingWPF\CafedralReportingWPF\Reports\Datasets\Semester.xsd</rd:SchemaPath>
+        <rd:DataSetName>SemesterDataset</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\kusachiy\Desktop\УЧЁБА\Диплом\Проект\CafedralReportingWPF\CafedralReportingWPF\Reports\Datasets\SemesterDataset.xsd</rd:SchemaPath>
         <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
