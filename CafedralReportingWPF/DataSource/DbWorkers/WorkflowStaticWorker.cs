@@ -24,6 +24,10 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                 var year = years.FirstOrDefault(y => y.FullYearName == model.Year);
                 var discipline = disciplines.FirstOrDefault(d => d.DisciplineName == model.DisciplineName);
                 var semester = semesters.FirstOrDefault(s => s.SemesterNumber == model.Semester);
+                if (discipline is null)
+                {
+
+                }
                 var etd = etds.FirstOrDefault(e => e.DisciplineId == discipline.Id);
                 var group = groups.FirstOrDefault(g => g.EntryYear == year.StartYear-semester.Course+1);
                 var newWorkflow = new Workflow

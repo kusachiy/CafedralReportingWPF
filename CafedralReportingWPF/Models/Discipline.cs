@@ -22,6 +22,11 @@ namespace CafedralReportingWPF.Models
          }
         public int ReadInSemesterId { get; set; }
         [ForeignKey("ReadInSemesterId")]
-        public Semester ReadInSemester { get; set; }     
+        public Semester ReadInSemester { get; set; }
+
+        public override string ToString()
+        {
+            return _fullName;
+        }
     }    
 }

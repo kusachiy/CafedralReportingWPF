@@ -9,15 +9,37 @@
     Title="SemesterReportPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Loaded="Page_Loaded"
     mc:Ignorable="d">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <DockPanel>
-            <Label>Report REEEEPOOOOORT</Label>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center">Year</Label>
+            <ComboBox
+                Name="yearCombobox"
+                Width="200"
+                Height="30"
+                VerticalAlignment="Center" />
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center">Semester</Label>
+            <ComboBox
+                Name="semesterCombobox"
+                Width="200"
+                Height="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <ComboBoxItem>Осенний</ComboBoxItem>
+                <ComboBoxItem>Весенний</ComboBoxItem>
+            </ComboBox>
+            <Button
+                Width="80"
+                Margin="5"
+                HorizontalAlignment="Right"
+                Click="Button_Click"
+                Content="View Report" />
         </DockPanel>
         <WindowsFormsHost
             Grid.Row="1"
