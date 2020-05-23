@@ -22,6 +22,7 @@
             <ComboBox
                 Name="yearCombobox"
                 Width="200"
+                
                 Height="30"
                 VerticalAlignment="Center" />
             <Label HorizontalAlignment="Center" VerticalAlignment="Center">Semester</Label>

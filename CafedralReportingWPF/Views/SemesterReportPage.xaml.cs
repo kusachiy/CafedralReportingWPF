@@ -11,16 +11,21 @@ using System.Windows.Controls;
 
 namespace CafedralReportingWPF.Views
 {
-    public struct YearViewModel
+    public class YearViewModel
     {
         public int Id { get; set; }
         public string Name { get; set;}
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
 
     public partial class SemesterReportPage : Page
     {
-        public ObservableCollection<string> Years { get; set; }
+        public ObservableCollection<YearViewModel> Years { get; set; }
 
         public SemesterReportPage()
         {
@@ -28,7 +33,9 @@ namespace CafedralReportingWPF.Views
         }
 
         private void LoadReport(bool isAutumn, YearViewModel year)
-        {            
+        {
+            _reportViewer.Reset();
+
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             SemesterDataset dataset = new SemesterDataset();
             dataset.BeginInit();
@@ -40,25 +47,26 @@ namespace CafedralReportingWPF.Views
             
             //fill data into adventureWorksDataSet
             var context = DbContextSingleton.GetContext();
-            var workflows = WorkflowStaticWorker.GetAllWorkflows(context);
+            //var workflows = WorkflowStaticWorker.GetAllWorkflows(context);
+            var workflows = WorkflowStaticWorker.GetAllWorkflowBySemesterAndYear(context,isAutumn,year.Id);
 
             DatatableDataImporter.FillSemesterDataset(dataset.DataTable1, workflows);
 
-            _reportViewer.RefreshReport();       
+            _reportViewer.RefreshReport();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            bool isautumn = semesterCombobox.SelectedItem.ToString() == "Осенний";
-            var year = yearCombobox.SelectedItem;
-            LoadReport(isautumn,(YearViewModel)year);
+            var isautumn = (semesterCombobox.SelectedItem as ComboBoxItem).Content.ToString();
+            var year = yearCombobox.SelectedItem as YearViewModel;
+            
+            LoadReport(isautumn == "Осенний",year);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var context = DbContextSingleton.GetContext();
-            Years = new ObservableCollection<string>(context.AcademicYears.ToList().Select(s => s.FullYearName));
-            yearCombobox.Items.Clear();
+            Years = new ObservableCollection<YearViewModel>(context.AcademicYears.ToList().Select(s => new YearViewModel { Id = s.Id, Name = s.FullYearName }));
             yearCombobox.ItemsSource = Years;
         }
     }
