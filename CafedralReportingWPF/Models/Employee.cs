@@ -9,6 +9,11 @@ namespace CafedralReportingWPF.Models
 {
     public class Employee: BaseModel
     {
-        public string FullName { get; set; }       
+        public string FullName { get; set; }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
     }
 }

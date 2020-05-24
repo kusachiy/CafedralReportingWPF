@@ -155,6 +155,9 @@
     <Compile Include="Views\SuccessPage.xaml.cs">
       <DependentUpon>SuccessPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DisciplineConfigPage.xaml.cs">
+      <DependentUpon>DisciplineConfigPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WorkflowPage.xaml.cs">
       <DependentUpon>WorkflowPage.xaml</DependentUpon>
     </Compile>
@@ -190,6 +193,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DisciplineConfigPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\WorkflowPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,7 +207,7 @@
     <Compile Include="Models\AcademicYear.cs" />
     <Compile Include="Models\Discipline.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeToDiscipline.cs" />
+    <Compile Include="Models\DisciplineConfig.cs" />
     <Compile Include="Models\Semester.cs" />
     <Compile Include="Models\Workflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

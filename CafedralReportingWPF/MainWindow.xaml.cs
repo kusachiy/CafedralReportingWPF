@@ -14,6 +14,7 @@ namespace CafedralReportingWPF
     {
         Page _currentPage;
         WorkflowPage _workflowControl;
+        DisciplineConfigPage _disciplineConfigPage;
         SuccessPage _successPage;
         SemesterReportPage _semReportPage;
 
@@ -23,6 +24,7 @@ namespace CafedralReportingWPF
             _successPage = new SuccessPage();
             _workflowControl = new WorkflowPage();
             _semReportPage = new SemesterReportPage();
+            _disciplineConfigPage = new DisciplineConfigPage();
             _currentPage = _workflowControl;
         }   
 
@@ -50,5 +52,9 @@ namespace CafedralReportingWPF
             myFrame.Content = page;
         }
 
+        private void Click_Config_View(object sender, RoutedEventArgs e)
+        {
+            SetFrameContent(_disciplineConfigPage);   
+        }        
     }
 }

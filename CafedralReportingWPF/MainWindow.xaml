@@ -37,6 +37,16 @@
                 Workload
             </Button>
             <Rectangle Height="5" Fill="White" />
+            <Button
+                Width="64"
+                Height="64"
+                Margin="0,5"
+                Background="{x:Null}"
+                BorderBrush="White"
+                Click="Click_Config_View"
+                FontFamily="Constantia"
+                Foreground="White" Content="Config"/>
+            <Rectangle Height="5" Fill="White" />
             <Label
                 Margin="0,5"
                 HorizontalAlignment="Center"

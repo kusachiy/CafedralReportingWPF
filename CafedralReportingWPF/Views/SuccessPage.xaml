@@ -14,12 +14,5 @@
         <Grid.Background>
             <ImageBrush ImageSource="/CafedralReportingWPF;component/Resources/success.png" Stretch="Uniform" />
         </Grid.Background>
-        <Image
-            Width="100"
-            Height="100"
-            Margin="206,216,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
-
     </Grid>
 </Page>

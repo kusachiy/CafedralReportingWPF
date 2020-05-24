@@ -17,7 +17,7 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
             var groups = context.StudyGroups.ToList();
             var disciplines = context.Disciplines.ToList();
             var semesters = context.Semesters.ToList();
-            var etds = context.EmployeeToDiscipline.ToList();
+            var etds = context.DisciplineConfig.ToList();
             var workflows = context.Workflows;
             foreach (var model in models)
             {
