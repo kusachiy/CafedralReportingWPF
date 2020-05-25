@@ -47,6 +47,10 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("EmployeeId")]
         public Employee Employee { get; set; }
 
+        public int? AgreementId { get; set; }
+        [ForeignKey("AgreementId")]
+        public Agreement Agreement { get; set; }
+
 
     }
 }

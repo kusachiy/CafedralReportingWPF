@@ -18,6 +18,7 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
             var disciplines = context.Disciplines.ToList();
             var semesters = context.Semesters.ToList();
             var etds = context.DisciplineConfig.ToList();
+            var agreements = context.Agreements.ToList();
             var workflows = context.Workflows;
             foreach (var model in models)
             {
@@ -53,7 +54,8 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                     Controlnaya = model.Controlnaya,
                     PracticeWeeks = model.PracticeWeeks,
                     Other = model.Other,
-                    EmployeeId = etd?.EmployeeId
+                    EmployeeId = etd?.EmployeeId,
+                    AgreementId = etd?.AgreementId
                 };
                 workflows.Add(newWorkflow);
             }
