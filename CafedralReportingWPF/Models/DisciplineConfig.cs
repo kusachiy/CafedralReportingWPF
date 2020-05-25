@@ -19,6 +19,8 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("DisciplineId")]
         public Discipline Discipline { get; set; }
 
-        public int? Agreement { get; set; }
+        public int? AgreementId { get; set; }
+        [ForeignKey("AgreementId")]
+        public Agreement Agreement { get; set; }
     }
 }

@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
+    Loaded="Page_Loaded"
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -38,8 +39,15 @@
                     Foreground="#FF878787"
                     Header="EmployeeId"
                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding Employee}" Header="Employee" />
-                <DataGridTextColumn Binding="{Binding Agreement}" Header="Agreement" />
+                <DataGridComboBoxColumn
+                    x:Name="EmployeesCombobox"
+                    Header="Employee"
+                    SelectedItemBinding="{Binding Employee}" />
+
+                <DataGridComboBoxColumn
+                    x:Name="AgreementCombobox"
+                    Header="Agreement"
+                    SelectedItemBinding="{Binding Agreement}" />
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Column="1">

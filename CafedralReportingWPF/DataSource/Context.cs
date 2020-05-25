@@ -20,5 +20,6 @@ namespace CafedralReportingWPF.DataSource
         public DbSet<Workflow> Workflows { get; set; }        
         public DbSet<DisciplineConfig> DisciplineConfig { get; set; }
         public DbSet<StudyGroup> StudyGroups { get; set; }
+        public DbSet<Agreement> Agreements { get; set; }
     }
 }
