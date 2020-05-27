@@ -55,7 +55,11 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                     PracticeWeeks = model.PracticeWeeks,
                     Other = model.Other,
                     EmployeeId = etd?.EmployeeId,
-                    AgreementId = etd?.AgreementId
+                    AgreementId = etd?.AgreementId,
+                    Employee2Id = etd?.Employee2Id,
+                    Employee3Id = etd?.Employee3Id,
+                    Employee4Id = etd?.Employee4Id,
+                    Employee5Id = etd?.Employee5Id
                 };
                 workflows.Add(newWorkflow);
             }
@@ -70,7 +74,8 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
 
         public static List<Workflow> GetAllWorkflowBySemesterAndYear(Context context,bool isatumn, int yearID)
         {
-            context.Workflows.Include(w => w.Employee).Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Load();
+            context.Workflows.Include(w => w.Employee).Include(w => w.Employee2).Include(w => w.Employee3).Include(w => w.Employee4).Include(w => w.Employee5)
+                .Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Load();
             return context.Workflows.Where(w=>w.Semester.IsAutumn == isatumn && w.WorkflowYearId == yearID).ToList();
         }
     }

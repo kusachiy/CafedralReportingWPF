@@ -29,7 +29,9 @@ namespace CafedralReportingWPF.Views
         {
             InitializeComponent();
             _context = DbContextSingleton.GetContext();
-           _context.DisciplineConfig.Include(d=>d.Discipline).Include(d=>d.Employee).Include(d=>d.Agreement).Load();
+           _context.DisciplineConfig.Include(d=>d.Discipline).Include(d=>d.Discipline.ReadInSemester)
+                .Include(d=>d.Employee).Include(d => d.Employee2).Include(d => d.Employee3).Include(d => d.Employee4).Include(d => d.Employee5)
+                .Include(d=>d.Agreement).Load();
             this.DataContext = _context.DisciplineConfig.Local.ToBindingList();
         }
               
@@ -43,6 +45,11 @@ namespace CafedralReportingWPF.Views
             _context.Employees.Load();
             _context.Agreements.Load();
             EmployeesCombobox.ItemsSource = _context.Employees.Local;
+            EmployeesCombobox2.ItemsSource = _context.Employees.Local;
+            EmployeesCombobox3.ItemsSource = _context.Employees.Local;
+            EmployeesCombobox4.ItemsSource = _context.Employees.Local;
+            EmployeesCombobox5.ItemsSource = _context.Employees.Local;
+
             AgreementCombobox.ItemsSource = _context.Agreements.Local;
         }
     }

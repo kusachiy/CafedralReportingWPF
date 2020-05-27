@@ -12,6 +12,8 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("ReadInSemesterId")]
         public Semester ReadInSemester { get; set; }
 
+        public bool IsMultiEmployee { get; set; }
+
         public override string ToString()
         {
             return DisciplineName;

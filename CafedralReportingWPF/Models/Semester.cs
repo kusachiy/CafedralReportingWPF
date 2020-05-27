@@ -13,5 +13,10 @@ namespace CafedralReportingWPF.Models
         public int CountOfWeeks { get; set; }
         public int Course { get; set; }
         public bool IsAutumn { get; set; }
+
+        public override string ToString()
+        {
+            return SemesterNumber.ToString();
+        }
     }
 }

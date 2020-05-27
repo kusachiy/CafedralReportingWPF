@@ -28,22 +28,34 @@
                     IsReadOnly="True" />
                 <DataGridTextColumn
                     Width="50"
-                    Binding="{Binding DisciplineId}"
+                    Binding="{Binding Semester}"
                     Foreground="#FF878787"
-                    Header="DisciplineId"
+                    Header="Semester"
                     IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding Discipline}" Header="Discipline" />
                 <DataGridTextColumn
-                    Width="50"
-                    Binding="{Binding EmployeeId}"
-                    Foreground="#FF878787"
-                    Header="EmployeeId"
+                    Binding="{Binding Discipline}"
+                    Header="Discipline"
                     IsReadOnly="True" />
                 <DataGridComboBoxColumn
                     x:Name="EmployeesCombobox"
                     Header="Employee"
                     SelectedItemBinding="{Binding Employee}" />
-
+                <DataGridComboBoxColumn
+                    x:Name="EmployeesCombobox2"
+                    Header="Employee2"
+                    SelectedItemBinding="{Binding Employee2}" />
+                <DataGridComboBoxColumn
+                    x:Name="EmployeesCombobox3"
+                    Header="Employee3"
+                    SelectedItemBinding="{Binding Employee3}" />
+                <DataGridComboBoxColumn
+                    x:Name="EmployeesCombobox4"
+                    Header="Employee4"
+                    SelectedItemBinding="{Binding Employee4}" />
+                <DataGridComboBoxColumn
+                    x:Name="EmployeesCombobox5"
+                    Header="Employee5"
+                    SelectedItemBinding="{Binding Employee5}" />
                 <DataGridComboBoxColumn
                     x:Name="AgreementCombobox"
                     Header="Agreement"
