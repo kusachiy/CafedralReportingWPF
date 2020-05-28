@@ -12,7 +12,7 @@ namespace CafedralReportingWPF.Helpers
             {
                 datatable.AddDataTable1Row(w.Group.FullName, w.Discipline.DisciplineName, w.Lectures,w.Practices,w.Labs,w.Group.CountOfStudents,GetInt(w.KR),GetInt(w.KP),GetInt(w.Examen),GetInt(w.Zachet)
                     ,ConcatanateEmployees(w)
-                    ,w.Semester.CountOfWeeks,w.Agreement?.Description);
+                    ,w.Semester.CountOfWeeks,w.Agreement?.Description,w.Semester.SemesterNumber.ToString(),w.WorkflowYear.FullYearName);
 
             }
         }

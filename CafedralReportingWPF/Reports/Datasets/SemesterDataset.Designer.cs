@@ -305,6 +305,10 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnAgreement;
             
+            private global::System.Data.DataColumn columnSemester;
+            
+            private global::System.Data.DataColumn columnStudyYear;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -444,6 +448,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SemesterColumn {
+                get {
+                    return this.columnSemester;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StudyYearColumn {
+                get {
+                    return this.columnStudyYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -479,7 +499,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int Lections, int Practices, int Labs, int CountOfStudents, int KR, int KP, int Examen, int Zachet, string Employee, int CountOfWeeks, string Agreement) {
+            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int Lections, int Practices, int Labs, int CountOfStudents, int KR, int KP, int Examen, int Zachet, string Employee, int CountOfWeeks, string Agreement, string Semester, string StudyYear) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GroupName,
@@ -494,7 +514,9 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         Zachet,
                         Employee,
                         CountOfWeeks,
-                        Agreement};
+                        Agreement,
+                        Semester,
+                        StudyYear};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -530,6 +552,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnEmployee = base.Columns["Employee"];
                 this.columnCountOfWeeks = base.Columns["CountOfWeeks"];
                 this.columnAgreement = base.Columns["Agreement"];
+                this.columnSemester = base.Columns["Semester"];
+                this.columnStudyYear = base.Columns["StudyYear"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -561,6 +585,10 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnCountOfWeeks);
                 this.columnAgreement = new global::System.Data.DataColumn("Agreement", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAgreement);
+                this.columnSemester = new global::System.Data.DataColumn("Semester", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSemester);
+                this.columnStudyYear = new global::System.Data.DataColumn("StudyYear", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudyYear);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -911,6 +939,38 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Semester {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.SemesterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Semester\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.SemesterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string StudyYear {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.StudyYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudyYear\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.StudyYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGroupNameNull() {
                 return this.IsNull(this.tableDataTable1.GroupNameColumn);
             }
@@ -1063,6 +1123,30 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAgreementNull() {
                 this[this.tableDataTable1.AgreementColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSemesterNull() {
+                return this.IsNull(this.tableDataTable1.SemesterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSemesterNull() {
+                this[this.tableDataTable1.SemesterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStudyYearNull() {
+                return this.IsNull(this.tableDataTable1.StudyYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStudyYearNull() {
+                this[this.tableDataTable1.StudyYearColumn] = global::System.Convert.DBNull;
             }
         }
         
