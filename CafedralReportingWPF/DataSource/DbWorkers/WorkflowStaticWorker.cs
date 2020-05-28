@@ -52,7 +52,7 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                     Zachet = model.Zachet,
                     Consultation = model.Consultation,
                     Controlnaya = model.Controlnaya,
-                    PracticeWeeks = model.PracticeWeeks,
+                    PracticeWeeks = model.PracticeWeeks?2:0,
                     Other = model.Other,
                     EmployeeId = etd?.EmployeeId,
                     AgreementId = etd?.AgreementId,
@@ -77,6 +77,12 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
             context.Workflows.Include(w => w.Employee).Include(w => w.Employee2).Include(w => w.Employee3).Include(w => w.Employee4).Include(w => w.Employee5)
                 .Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Load();
             return context.Workflows.Where(w=>w.Semester.IsAutumn == isatumn && w.WorkflowYearId == yearID).ToList();
+        }
+        public static List<Workflow> GetAllWorkflowByYear(Context context, int yearID)
+        {
+            context.Workflows.Include(w => w.Employee).Include(w => w.Employee2).Include(w => w.Employee3).Include(w => w.Employee4).Include(w => w.Employee5)
+                .Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Where(w=>w.WorkflowYearId==yearID).Load();
+            return context.Workflows.ToList();
         }
     }
 }

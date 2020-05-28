@@ -41,7 +41,7 @@ namespace CafedralReportingWPF.Models
         public bool Zachet { get; set; }
         public bool Controlnaya { get; set; }
         public bool Consultation { get; set; }
-        public bool PracticeWeeks { get; set; }
+        public int PracticeWeeks { get; set; }
         public bool Other { get; set; }
         public int? EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

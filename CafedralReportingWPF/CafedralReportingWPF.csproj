@@ -150,6 +150,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Datasets\WorkloadDataset.cs">
+      <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\WorkloadDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkloadReportPage.xaml.cs">
+      <DependentUpon>WorkloadReportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SemesterReportPage.xaml.cs">
       <DependentUpon>SemesterReportPage.xaml</DependentUpon>
     </Compile>
@@ -186,6 +197,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\WorkloadReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\SemesterReportPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,6 +243,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Controls\Workload.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Controls\Semester.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -252,6 +270,17 @@
     </None>
     <None Include="Reports\Datasets\SemesterDataset.xss">
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDataset.xsc">
+      <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkloadDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDataset.xss">
+      <DependentUpon>WorkloadDataset.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
