@@ -6686,6 +6686,7 @@ Fields!Examen.Value)</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -6697,7 +6698,7 @@ Fields!Examen.Value)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=code.GetIntOrEmptyString(Fields!Examen.Value * 0.33 * Fields!CountOfStudents.Value)</Value>
+                                  <Value>=code.GetIntOrEmptyString(Round(Fields!Examen.Value * 0.33 * Fields!CountOfStudents.Value,1,MidpointRounding.AwayFromZero))</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.0;(0.0)</Format>
@@ -6729,7 +6730,7 @@ Fields!Examen.Value)</Value>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=code.GetIntOrEmptyString(Fields!Zachet.Value*Fields!CountOfStudents.Value*0.25)</Value>
+                                  <Value>=code.GetIntOrEmptyString(Round(Fields!Zachet.Value*Fields!CountOfStudents.Value*0.25,1,MidpointRounding.AwayFromZero))</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.0;(0.0)</Format>
@@ -7479,6 +7480,7 @@ Fields!Examen.Value)</Value>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
+            <PageName>Бакалавры_ПИН</PageName>
             <Top>0.9876cm</Top>
             <Height>6.62846cm</Height>
             <Width>46.13646cm</Width>
