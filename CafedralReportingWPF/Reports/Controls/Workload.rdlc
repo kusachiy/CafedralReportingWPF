@@ -35,93 +35,97 @@
         </Field>
         <Field Name="Semester">
           <DataField>Semester</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="CountOfStudents">
           <DataField>CountOfStudents</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="WeeksInSemester">
           <DataField>WeeksInSemester</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="GroupsCount">
           <DataField>GroupsCount</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="SubgroupsCount">
           <DataField>SubgroupsCount</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Lections">
           <DataField>Lections</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Practicies">
           <DataField>Practicies</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Labs">
           <DataField>Labs</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Examen">
           <DataField>Examen</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Zachet">
           <DataField>Zachet</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="RGR">
           <DataField>RGR</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="KR">
           <DataField>KR</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="KP">
           <DataField>KP</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="LearnPracticies">
           <DataField>LearnPracticies</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="WorkPracticies">
           <DataField>WorkPracticies</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="DiplomaPracticies">
           <DataField>DiplomaPracticies</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="GEK">
           <DataField>GEK</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="GAK">
           <DataField>GAK</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="GAKPred">
           <DataField>GAKPred</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="DPRuk">
           <DataField>DPRuk</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Assignee">
           <DataField>Assignee</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StudyYear">
+          <DataField>StudyYear</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>WorkloadDataset</rd:DataSetName>
         <rd:SchemaPath>C:\Users\kusachiy\Desktop\УЧЁБА\Диплом\Проект\CafedralReportingWPF\CafedralReportingWPF\Reports\Datasets\WorkloadDataset.xsd</rd:SchemaPath>
-        <rd:TableName>DataTable1</rd:TableName>
+        <rd:TableName>DataTable2</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -139,7 +143,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Распределение нагрузки на 2018-2019 уч.год</Value>
+                    <Value>="Распределение нагрузки на " + Cstr(Fields!StudyYear.Value) + " уч.год"</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -6686,7 +6690,6 @@ Fields!Examen.Value)</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

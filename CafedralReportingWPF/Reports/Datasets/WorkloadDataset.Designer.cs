@@ -329,6 +329,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnAssignee;
             
+            private global::System.Data.DataColumn columnStudyYear;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable2DataTable() {
@@ -564,6 +566,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StudyYearColumn {
+                get {
+                    return this.columnStudyYear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -624,7 +634,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         int GAK, 
                         int GAKPred, 
                         int DPRuk, 
-                        string Assignee) {
+                        string Assignee, 
+                        string StudyYear) {
                 DataTable2Row rowDataTable2Row = ((DataTable2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumberPP,
@@ -651,7 +662,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         GAK,
                         GAKPred,
                         DPRuk,
-                        Assignee};
+                        Assignee,
+                        StudyYear};
                 rowDataTable2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable2Row);
                 return rowDataTable2Row;
@@ -699,6 +711,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnGAKPred = base.Columns["GAKPred"];
                 this.columnDPRuk = base.Columns["DPRuk"];
                 this.columnAssignee = base.Columns["Assignee"];
+                this.columnStudyYear = base.Columns["StudyYear"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -754,6 +767,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnDPRuk);
                 this.columnAssignee = new global::System.Data.DataColumn("Assignee", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAssignee);
+                this.columnStudyYear = new global::System.Data.DataColumn("StudyYear", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStudyYear);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1296,6 +1311,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string StudyYear {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable2.StudyYearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudyYear\' in table \'DataTable2\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable2.StudyYearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNumberPPNull() {
                 return this.IsNull(this.tableDataTable2.NumberPPColumn);
             }
@@ -1592,6 +1623,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAssigneeNull() {
                 this[this.tableDataTable2.AssigneeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStudyYearNull() {
+                return this.IsNull(this.tableDataTable2.StudyYearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStudyYearNull() {
+                this[this.tableDataTable2.StudyYearColumn] = global::System.Convert.DBNull;
             }
         }
         
