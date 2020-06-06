@@ -2,6 +2,7 @@
 using CafedralReportingWPF.DataSource.DbWorkers;
 using CafedralReportingWPF.Helpers;
 using CafedralReportingWPF.Views;
+using CafedralReportingWPF.Views.Dialogs;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -62,6 +63,11 @@ namespace CafedralReportingWPF
         private void Click_Semester_Report(object sender, RoutedEventArgs e)
         {
             SetFrameContent(_semReportPage);
+        }
+        private void Click_SemConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new SemesterConfigWindow();
+            window.ShowDialog();
         }
     }
 }

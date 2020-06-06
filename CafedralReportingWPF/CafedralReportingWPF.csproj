@@ -158,6 +158,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dialogs\SemesterConfigWindow.xaml.cs">
+      <DependentUpon>SemesterConfigWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\WorkloadReportPage.xaml.cs">
       <DependentUpon>WorkloadReportPage.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
     <Compile Include="Views\WorkflowPage.xaml.cs">
       <DependentUpon>WorkflowPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Dialogs\SemesterConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Dialogs\EmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

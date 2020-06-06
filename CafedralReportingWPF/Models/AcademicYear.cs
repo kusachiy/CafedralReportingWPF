@@ -11,5 +11,10 @@ namespace CafedralReportingWPF.Models
     {
         public int StartYear { get; set; }
         public string FullYearName { get; set; }
+
+        public override string ToString()
+        {
+            return FullYearName;
+        }
     }
 }

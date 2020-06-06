@@ -8,114 +8,101 @@
     Title="CafedralReporting v.0.1"
     WindowState="Maximized"
     mc:Ignorable="d">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <StackPanel Background="#FF007D83">
-            <Rectangle Height="5" Fill="White" />
-            <Label
-                Margin="0,5"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="Constantia"
-                FontWeight="Bold"
-                Foreground="White">
-                View Data
-            </Label>
-            <Rectangle Height="5" Fill="White" />
-            <Button
-                Width="64"
-                Height="64"
-                Margin="0,5"
-                Background="#FF16B29C"
-                BorderBrush="White"
-                Click="Click_Workload_Control"
-                FontFamily="Constantia"
-                Foreground="White">
-                Workload
-            </Button>
-            <Rectangle Height="5" Fill="White" />
-            <Button
-                Width="64"
-                Height="64"
-                Margin="0,5"
-                Background="#FF16B29C"
-                BorderBrush="White"
-                Click="Click_Config_View"
-                Content="Config"
-                FontFamily="Constantia"
-                Foreground="White" />
-            <Rectangle Height="5" Fill="White" />
-            <Label
-                Margin="0,5"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="Constantia"
-                FontWeight="Bold"
-                Foreground="White">
-                Отчёты
-            </Label>
-            <Rectangle Height="5" Fill="White" />
-            <Button
-                Width="64"
-                Height="64"
-                Margin="0,5"
-                Background="#FF16B29C"
-                BorderBrush="White"
-                Click="Click_Semester_Report"
-                FontFamily="Constantia"
-                Foreground="White">
-                Семестр
-            </Button>
-            <Rectangle Height="5" Fill="White" />
-            <Button
-                Width="64"
-                Height="64"
-                Margin="0,5"
-                Background="#FF16B29C"
-                BorderBrush="White"
-                Click="Click_Workload_Report"
-                FontFamily="Constantia"
-                Foreground="White">
-                Нагрузка
-            </Button>
-            <Rectangle Height="5" Fill="White" />
-            <Rectangle
-                Height="5"
-                Margin="0,5"
-                Fill="White" />
-            <Button
-                Width="64"
-                Height="64"
-                Margin="0,5"
-                Background="#FF16B29C"
-                BorderBrush="White"
-                Click="Click_Import"
-                FontFamily="Constantia"
-                Foreground="White">
-                Import
-            </Button>
-        </StackPanel>
-        <Frame Name="myFrame" Grid.Column="1">
-            <Frame.Template>
-                <ControlTemplate TargetType="Frame">
-                    <DockPanel Margin="7">
-                        <StackPanel
-                            Margin="0"
-                            DockPanel.Dock="Top"
-                            Orientation="Horizontal"
-                            Visibility="Hidden" />
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Конфигурация">
+                <MenuItem Click="Click_SemConfig" Header="Семестр" />
+                <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="Данные">
+                <MenuItem Click="Click_Import" Header="Импорт данных (from csv)" />
+            </MenuItem>
 
-                        <Border>
-                            <ContentPresenter />
-                        </Border>
-                    </DockPanel>
-                </ControlTemplate>
+        </Menu>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="#FF007D83">
+                <Rectangle Height="5" Fill="White" />
+                <Label
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Constantia"
+                    FontWeight="Bold"
+                    Foreground="White">
+                    View Data
+                </Label>
+                <Rectangle Height="5" Fill="White" />
+                <Button
+                    Width="64"
+                    Height="64"
+                    Margin="0,5"
+                    Background="#FF16B29C"
+                    BorderBrush="White"
+                    Click="Click_Workload_Control"
+                    FontFamily="Constantia"
+                    Foreground="White">
+                    Workload
+                </Button>
+                <Rectangle Height="5" Fill="White" />
+                <Label
+                    Margin="0,5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Constantia"
+                    FontWeight="Bold"
+                    Foreground="White">
+                    Отчёты
+                </Label>
+                <Rectangle Height="5" Fill="White" />
+                <Button
+                    Width="64"
+                    Height="64"
+                    Margin="0,5"
+                    Background="#FF16B29C"
+                    BorderBrush="White"
+                    Click="Click_Semester_Report"
+                    FontFamily="Constantia"
+                    Foreground="White">
+                    Семестр
+                </Button>
+                <Rectangle Height="5" Fill="White" />
+                <Button
+                    Width="64"
+                    Height="64"
+                    Margin="0,5"
+                    Background="#FF16B29C"
+                    BorderBrush="White"
+                    Click="Click_Workload_Report"
+                    FontFamily="Constantia"
+                    Foreground="White">
+                    Нагрузка
+                </Button>
+            </StackPanel>
+            <Frame Name="myFrame" Grid.Column="1">
+                <Frame.Template>
+                    <ControlTemplate TargetType="Frame">
+                        <DockPanel Margin="7">
+                            <StackPanel
+                                Margin="0"
+                                DockPanel.Dock="Top"
+                                Orientation="Horizontal"
+                                Visibility="Hidden" />
 
-            </Frame.Template>
-        </Frame>
-    </Grid>
+                            <Border>
+                                <ContentPresenter />
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+
+                </Frame.Template>
+            </Frame>
+        </Grid>
+    </DockPanel>
 
 </Window>

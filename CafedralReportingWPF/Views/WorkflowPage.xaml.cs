@@ -1,8 +1,10 @@
 ﻿using CafedralReportingWPF.DataSource;
 using CafedralReportingWPF.DataSource.DbWorkers;
 using CafedralReportingWPF.Helpers;
+using CafedralReportingWPF.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -24,29 +26,40 @@ namespace CafedralReportingWPF.Views
     /// </summary>
     public partial class WorkflowPage : Page
     {
-        private Context _context; 
+        private Context _context;
+        private List<Workflow> _allWorkflows;
         public WorkflowPage()
         {
             InitializeComponent();
-
             _context = DbContextSingleton.GetContext();
-            /*
-            FileLoader loader = new FileLoader();
-            WorkflowWorker.ImportWorkflow(_context,loader.ImportWorkflow());
-            */
-
-            _context.Workflows.Load();
-            this.DataContext = _context.Workflows.Local.ToBindingList();
         }
-              
-        private void Report_Click(object sender, RoutedEventArgs e)
+        private void FiltersChanged(object sender, TextChangedEventArgs e)
         {
-
+            var lowerDispFilter = dispFilter.Text.ToLower();
+            ICollectionView cv = CollectionViewSource.GetDefaultView(myDataGrid.ItemsSource);
+            cv.Filter = f =>
+            {
+                Workflow w = f as Workflow;
+                return w.WorkflowYear.FullYearName.StartsWith(yearFilter.Text) &&
+                w.Discipline.DisciplineName.ToLower().StartsWith(lowerDispFilter) &&
+                w.Semester.SemesterNumber.ToString().StartsWith(semFilter.Text);             
+            };
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            _context.SaveChanges();
+            yearFilter.Clear();
+            dispFilter.Clear();
+            semFilter.Clear();
+            if (_allWorkflows is null)
+                _allWorkflows = WorkflowStaticWorker.GetAllWorkflows(_context);
+            myDataGrid.ItemsSource = _allWorkflows;
+        }
+
+        private void MyDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selecteditem = myDataGrid.SelectedItem as Workflow;
+            MessageBox.Show($"{selecteditem.Discipline}");
         }
     }
 }

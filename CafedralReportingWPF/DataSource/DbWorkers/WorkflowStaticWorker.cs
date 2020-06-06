@@ -68,8 +68,7 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
 
         public static List<Workflow> GetAllWorkflows(Context context)
         {
-            context.Workflows.Include(w => w.Employee).Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Load();
-            return context.Workflows.ToList();
+            return context.Workflows.Include(w => w.Employee).Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).ToList();
         }
 
         public static List<Workflow> GetAllWorkflowBySemesterAndYear(Context context,bool isatumn, int yearID)

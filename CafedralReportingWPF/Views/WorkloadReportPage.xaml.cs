@@ -18,8 +18,7 @@ namespace CafedralReportingWPF.Views
         public WorkloadReportPage()
         {
             InitializeComponent();            
-        }
-
+        }        
         private void LoadReport(YearViewModel year)
         {
             _reportViewer.Reset();
