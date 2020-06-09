@@ -180,7 +180,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Dialogs\EmployeeWindow.xaml">
+    <Page Include="Views\Dialogs\WorkflowDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
@@ -194,8 +194,8 @@
     </Compile>
     <Compile Include="DataSource\Context.cs" />
     <Compile Include="DataSource\DbWorkers\WorkflowStaticWorker.cs" />
-    <Compile Include="Views\Dialogs\EmployeeWindow.xaml.cs">
-      <DependentUpon>EmployeeWindow.xaml</DependentUpon>
+    <Compile Include="Views\Dialogs\WorkflowDialog.xaml.cs">
+      <DependentUpon>WorkflowDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DbContextSingleton.cs" />
     <Compile Include="Helpers\FileLoader.cs" />

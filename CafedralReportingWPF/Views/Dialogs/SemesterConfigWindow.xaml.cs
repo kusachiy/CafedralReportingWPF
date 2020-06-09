@@ -36,5 +36,10 @@ namespace CafedralReportingWPF.Views.Dialogs
             _context.SaveChanges();
             this.DialogResult = true;  
         }
+
+        private void MyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

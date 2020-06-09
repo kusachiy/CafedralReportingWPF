@@ -1,0 +1,232 @@
+﻿<Window
+    x:Class="CafedralReportingWPF.Views.Dialogs.WokrflowDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CafedralReportingWPF"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WokrflowDialog"
+    Width="800"
+    Height="600"
+    mc:Ignorable="d">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Right" VerticalAlignment="Center">ID:</Label>
+            <TextBlock
+                Name="IdTextBlock"
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                Text="{Binding Id}" />
+        </DockPanel>
+        <Label
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            Дисциплина:
+        </Label>
+        <ComboBox
+            Name="DisciplineCombobox"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+        <DockPanel Grid.Column="4">
+            <Label VerticalAlignment="Center">Семестр:</Label>
+            <ComboBox
+                Name="SemesterCombobox"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center" />
+
+        </DockPanel>
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            Группа:
+        </Label>
+        <ComboBox
+            Name="GroupCombobox"
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            Год:
+        </Label>
+        <ComboBox
+            Name="YearCombobox"
+            Grid.Row="1"
+            Grid.Column="3"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+        <DockPanel
+            Grid.Row="1"
+            Grid.Column="4"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">По выбору:</Label>
+            <CheckBox
+                Name="IsElevtiveCombobox"
+                Grid.Column="3"
+                Grid.ColumnSpan="2"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">ДС:</Label>
+            <CheckBox
+                Name="IsDSCombobox"
+                Grid.Column="3"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center">Лекций:</Label>
+            <TextBox
+                Name="LectionsTextbox"
+                Grid.Column="3"
+                Width="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="2"
+            Grid.Column="2"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center">Практик:</Label>
+            <TextBox
+                Name="PracticiesTextbox"
+                Grid.Column="3"
+                Width="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="2"
+            Grid.Column="3"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center">Лабораторных:</Label>
+            <TextBox
+                Name="LabsTextbox"
+                Grid.Column="3"
+                Width="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="2"
+            Grid.Column="4"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Курсовая работа:</Label>
+            <CheckBox
+                Name="KRCombobox"
+                Grid.Column="3"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel Grid.Row="3" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Курсовой проект:</Label>
+            <CheckBox
+                Name="KPCombobox"
+                Grid.Column="3"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="3"
+            Grid.Column="1"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Экзамен:</Label>
+            <CheckBox
+                Name="ExamCombobox"
+                Grid.Column="3"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="3"
+            Grid.Column="2"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Зачёт:</Label>
+            <CheckBox
+                Name="ZachCombobox"
+                Grid.Column="3"
+                VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="3"
+            Grid.Column="3"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Контрольная:</Label>
+            <CheckBox Name="KontrCombobox" VerticalAlignment="Center" />
+        </DockPanel>
+        <DockPanel
+            Grid.Row="3"
+            Grid.Column="4"
+            HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Консультация:</Label>
+            <CheckBox Name="ConsultCombobox" VerticalAlignment="Center" />
+        </DockPanel>
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            Преподаватель:
+        </Label>
+        <ComboBox
+            Name="EmployeeCombobox"
+            Grid.Row="4"
+            Grid.Column="1"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+
+        <Label
+            Grid.Row="4"
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            Тип договора:
+        </Label>
+        <ComboBox
+            Name="AgreementCombobox"
+            Grid.Row="4"
+            Grid.Column="3"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="1"
+            Click="Accept_Click"
+            Content="Сохранить" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="3"
+            Content="Отмена"
+            IsCancel="True" />
+    </Grid>
+
+</Window>

@@ -28,7 +28,7 @@
             x:FieldModifier="public"
             AutoGenerateColumns="False"
             ColumnWidth="*"
-            ItemsSource="{Binding}">
+            ItemsSource="{Binding}" SelectionChanged="MyDataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="50"

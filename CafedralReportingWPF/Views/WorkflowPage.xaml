@@ -37,23 +37,69 @@
                     Width="150"
                     TextChanged="FiltersChanged" />
             </DockPanel>
-            <Label
-                Grid.Column="1"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center">
-                Используйте двойной клик мыши для редактирования/удаления записей
-            </Label>
-
+            <DockPanel Grid.Column="1" HorizontalAlignment="Right">
+                <Label VerticalAlignment="Center" Foreground="Red">Таблица только для чтения</Label>
+                <Button
+                    Name="Add_Button"
+                    Margin="5"
+                    Click="Add_WF_Click">
+                    Добавить нагрузку
+                </Button>
+                <Button
+                    Name="Edit_Button"
+                    Margin="5"
+                    Click="Edit_WF_Click"
+                    IsEnabled="False">
+                    Изменить нагрузку
+                </Button>
+            </DockPanel>
         </Grid>
         <DataGrid
             x:Name="myDataGrid"
             Grid.Row="1"
             x:FieldModifier="public"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             CanUserDeleteRows="False"
             ColumnWidth="*"
             IsReadOnly="True"
             ItemsSource="{Binding}"
-            MouseDoubleClick="MyDataGrid_MouseDoubleClick" />
+            SelectionChanged="MyDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id" />
+                <DataGridTextColumn
+                    Width="5*"
+                    Binding="{Binding Discipline}"
+                    Header="Дисциплина" />
+                <DataGridTextColumn Binding="{Binding Semester}" Header="Семестр" />
+                <DataGridTextColumn
+                    Width="2*"
+                    Binding="{Binding Group}"
+                    Header="Группа" />
+                <DataGridTextColumn
+                    Width="2*"
+                    Binding="{Binding WorkflowYear}"
+                    Header="Год" />
+                <DataGridCheckBoxColumn Binding="{Binding IsElective}" Header="По выбору" />
+                <DataGridCheckBoxColumn Binding="{Binding IsDS}" Header="ДС" />
+                <DataGridTextColumn Binding="{Binding Lectures}" Header="Лекции" />
+                <DataGridTextColumn Binding="{Binding Practices}" Header="Практики" />
+                <DataGridTextColumn Binding="{Binding Labs}" Header="Лабы" />
+                <DataGridCheckBoxColumn Binding="{Binding KR}" Header="КР" />
+                <DataGridCheckBoxColumn Binding="{Binding KP}" Header="КП" />
+                <DataGridCheckBoxColumn Binding="{Binding Examen}" Header="Экз" />
+                <DataGridCheckBoxColumn Binding="{Binding Zachet}" Header="Зач" />
+                <DataGridCheckBoxColumn Binding="{Binding Controlnaya}" Header="Конт" />
+                <DataGridCheckBoxColumn Binding="{Binding Consultation}" Header="Конс" />
+                <DataGridTextColumn
+                    Width="3*"
+                    Binding="{Binding Employee}"
+                    Header="Преподаватель" />
+                <DataGridTextColumn
+                    Width="2*"
+                    Binding="{Binding Agreement}"
+                    Header="Договор" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

@@ -18,15 +18,15 @@ namespace CafedralReportingWPF.Views.Dialogs
     /// <summary>
     /// Interaction logic for EmployeeWindow.xaml
     /// </summary>
-    public partial class EmployeeWindow : Window
+    public partial class WokrflowDialog : Window
     {
-        public Employee Employee { get; private set; }
+        public Workflow Workflow { get; private set; }
 
-        public EmployeeWindow(Employee e)
+        public WokrflowDialog(Workflow workflow)
         {
             InitializeComponent();
-            Employee = e;
-            this.DataContext = Employee;
+            Workflow = workflow;
+            this.DataContext = Workflow;
         }
 
         private void Accept_Click(object sender, RoutedEventArgs e)

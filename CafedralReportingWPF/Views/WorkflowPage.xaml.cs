@@ -2,6 +2,7 @@
 using CafedralReportingWPF.DataSource.DbWorkers;
 using CafedralReportingWPF.Helpers;
 using CafedralReportingWPF.Models;
+using CafedralReportingWPF.Views.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,7 @@ namespace CafedralReportingWPF.Views
     {
         private Context _context;
         private List<Workflow> _allWorkflows;
+        private Workflow _selectedWorkflow;
         public WorkflowPage()
         {
             InitializeComponent();
@@ -55,11 +57,23 @@ namespace CafedralReportingWPF.Views
                 _allWorkflows = WorkflowStaticWorker.GetAllWorkflows(_context);
             myDataGrid.ItemsSource = _allWorkflows;
         }
-
-        private void MyDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Add_WF_Click(object sender, RoutedEventArgs e)
         {
-            var selecteditem = myDataGrid.SelectedItem as Workflow;
-            MessageBox.Show($"{selecteditem.Discipline}");
+
+        }
+
+        private void Edit_WF_Click(object sender, RoutedEventArgs e)
+        {
+            if (_selectedWorkflow is null)
+                return;
+            var window = new WokrflowDialog(_selectedWorkflow);
+            window.ShowDialog();
+        }
+
+        private void MyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            _selectedWorkflow = myDataGrid.SelectedItem as Workflow;
+            Edit_Button.IsEnabled = !(_selectedWorkflow is null);
         }
     }
 }
