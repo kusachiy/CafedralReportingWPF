@@ -309,6 +309,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnStudyYear;
             
+            private global::System.Data.DataColumn columnCountOfSubgroups;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -464,6 +466,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CountOfSubgroupsColumn {
+                get {
+                    return this.columnCountOfSubgroups;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,23 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int Lections, int Practices, int Labs, int CountOfStudents, int KR, int KP, int Examen, int Zachet, string Employee, int CountOfWeeks, string Agreement, string Semester, string StudyYear) {
+            public DataTable1Row AddDataTable1Row(
+                        string GroupName, 
+                        string DisciplineName, 
+                        int Lections, 
+                        int Practices, 
+                        int Labs, 
+                        int CountOfStudents, 
+                        int KR, 
+                        int KP, 
+                        int Examen, 
+                        int Zachet, 
+                        string Employee, 
+                        int CountOfWeeks, 
+                        string Agreement, 
+                        string Semester, 
+                        string StudyYear, 
+                        int CountOfSubgroups) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GroupName,
@@ -516,7 +542,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         CountOfWeeks,
                         Agreement,
                         Semester,
-                        StudyYear};
+                        StudyYear,
+                        CountOfSubgroups};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -554,6 +581,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnAgreement = base.Columns["Agreement"];
                 this.columnSemester = base.Columns["Semester"];
                 this.columnStudyYear = base.Columns["StudyYear"];
+                this.columnCountOfSubgroups = base.Columns["CountOfSubgroups"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,6 +617,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnSemester);
                 this.columnStudyYear = new global::System.Data.DataColumn("StudyYear", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStudyYear);
+                this.columnCountOfSubgroups = new global::System.Data.DataColumn("CountOfSubgroups", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountOfSubgroups);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -971,6 +1001,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CountOfSubgroups {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.CountOfSubgroupsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountOfSubgroups\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.CountOfSubgroupsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGroupNameNull() {
                 return this.IsNull(this.tableDataTable1.GroupNameColumn);
             }
@@ -1147,6 +1193,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStudyYearNull() {
                 this[this.tableDataTable1.StudyYearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCountOfSubgroupsNull() {
+                return this.IsNull(this.tableDataTable1.CountOfSubgroupsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCountOfSubgroupsNull() {
+                this[this.tableDataTable1.CountOfSubgroupsColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -12,6 +12,7 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("ReadInSemesterId")]
         public Semester ReadInSemester { get; set; }
 
+        //не используется. сликом сложно. оставил возможность назначать 5 преподавателей на каждую дисциплину.
         public bool IsMultiEmployee { get; set; }
 
         public override string ToString()

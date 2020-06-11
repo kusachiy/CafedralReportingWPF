@@ -69,5 +69,29 @@ namespace CafedralReportingWPF
             var window = new SemesterConfigWindow();
             window.ShowDialog();
         }
+
+        private void Click_GroupConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new GroupConfigWindow();
+            window.ShowDialog();
+        }
+
+        private void Click_EmployeeConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new EmployeeConfigWindow();
+            window.ShowDialog();
+        }
+
+        private void Click_YearConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new YearConfigWindow();
+            window.ShowDialog();
+        }
+
+        private void Click_DispConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new DisciplineConfigWindow();
+            window.ShowDialog();
+        }
     }
 }

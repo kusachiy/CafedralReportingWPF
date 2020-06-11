@@ -2145,7 +2145,7 @@
 
 + Fields!CountOfWeeks.Value * Fields!Practices.Value
 
-+ Fields!CountOfWeeks.Value * Fields!Labs.Value
++ Fields!CountOfWeeks.Value * Fields!Labs.Value * Fields!CountOfSubgroups.Value
  
 + Fields!CountOfStudents.Value * 2 * iif(Fields!KR.Value,1,0) 
 
@@ -3401,6 +3401,10 @@
         </Field>
         <Field Name="StudyYear">
           <DataField>StudyYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CountOfSubgroups">
+          <DataField>CountOfSubgroups</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

@@ -11,7 +11,11 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Конфигурация">
-                <MenuItem Click="Click_SemConfig" Header="Семестр" />
+                <MenuItem Click="Click_DispConfig" Header="Дисциплины" />
+                <MenuItem Click="Click_SemConfig" Header="Семестры" />
+                <MenuItem Click="Click_YearConfig" Header="Учебные годы" />
+                <MenuItem Click="Click_EmployeeConfig" Header="Преподаватели" />
+                <MenuItem Click="Click_GroupConfig" Header="Группы" />
                 <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины" />
                 <Separator />
                 <MenuItem Header="_Exit" />

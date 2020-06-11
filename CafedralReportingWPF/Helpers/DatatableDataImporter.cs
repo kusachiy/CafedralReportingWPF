@@ -13,7 +13,7 @@ namespace CafedralReportingWPF.Helpers
             {
                 datatable.AddDataTable1Row(w.Group.FullName, w.Discipline.DisciplineName, w.Lectures,w.Practices,w.Labs,w.Group.CountOfStudents,GetInt(w.KR),GetInt(w.KP),GetInt(w.Examen),GetInt(w.Zachet)
                     ,ConcatanateEmployees(w)
-                    ,w.Semester.CountOfWeeks,w.Agreement?.Description,w.Semester.SemesterNumber.ToString(),w.WorkflowYear.FullYearName);
+                    ,w.Semester.CountOfWeeks,w.Agreement?.Description,w.Semester.SemesterNumber.ToString(),w.WorkflowYear.FullYearName,w.Group.CountOfSubgroups);
 
             }
         }
@@ -21,7 +21,7 @@ namespace CafedralReportingWPF.Helpers
         {
             foreach (var w in workflows)
             {
-                datatable.AddDataTable2Row("",w.Discipline.DisciplineName,"ПИН","ФИТ",w.Semester.SemesterNumber,w.Group.CountOfStudents,w.Semester.CountOfWeeks,1,1,w.Lectures,w.Practices,w.Labs
+                datatable.AddDataTable2Row("",w.Discipline.DisciplineName,"ПИН","ФИТ",w.Semester.SemesterNumber,w.Group.CountOfStudents,w.Semester.CountOfWeeks,1,w.Group.CountOfSubgroups,w.Lectures,w.Practices,w.Labs
                     ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName);
 
             }
