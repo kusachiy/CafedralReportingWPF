@@ -142,6 +142,7 @@
     <Compile Include="Helpers\DatatableDataImporter.cs" />
     <Compile Include="Models\Agreement.cs" />
     <Compile Include="Models\StudyGroup.cs" />
+    <Compile Include="Models\StaticWorkflow.cs" />
     <Compile Include="Reports\Datasets\SemesterDataset.cs">
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
     </Compile>
@@ -157,6 +158,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\StaticWorkflowConfigWindow.xaml.cs">
+      <DependentUpon>StaticWorkflowConfigWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\DisciplineConfigWindow.xaml.cs">
       <DependentUpon>DisciplineConfigWindow.xaml</DependentUpon>
@@ -182,12 +186,16 @@
     <Compile Include="Views\SuccessPage.xaml.cs">
       <DependentUpon>SuccessPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\DisciplineConfigPage.xaml.cs">
-      <DependentUpon>DisciplineConfigPage.xaml</DependentUpon>
+    <Compile Include="Views\Dialogs\DisciplineAssignConfigWindow.xaml.cs">
+      <DependentUpon>DisciplineAssignConfigWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkflowPage.xaml.cs">
       <DependentUpon>WorkflowPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Dialogs\StaticWorkflowConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Dialogs\DisciplineConfigWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -244,7 +252,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\DisciplineConfigPage.xaml">
+    <Page Include="Views\Dialogs\DisciplineAssignConfigWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -17,7 +17,8 @@ namespace CafedralReportingWPF.DataSource
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<AcademicYear> AcademicYears { get; set; }
-        public DbSet<Workflow> Workflows { get; set; }        
+        public DbSet<Workflow> Workflows { get; set; }   
+        public DbSet<StaticWorkflow> StaticWorkflows { get; set; }
         public DbSet<DisciplineConfig> DisciplineConfig { get; set; }
         public DbSet<StudyGroup> StudyGroups { get; set; }
         public DbSet<Agreement> Agreements { get; set; }

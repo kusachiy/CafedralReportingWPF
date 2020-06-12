@@ -15,7 +15,7 @@ namespace CafedralReportingWPF
     {
         Page _currentPage;
         WorkflowPage _workflowControl;
-        DisciplineConfigPage _disciplineConfigPage;
+        DisciplineAssignConfigWindow _disciplineConfigPage;
         SuccessPage _successPage;
         SemesterReportPage _semReportPage;
         WorkloadReportPage _workloadReportPage;
@@ -26,7 +26,7 @@ namespace CafedralReportingWPF
             _successPage = new SuccessPage();
             _workflowControl = new WorkflowPage();
             _semReportPage = new SemesterReportPage();
-            _disciplineConfigPage = new DisciplineConfigPage();
+            _disciplineConfigPage = new DisciplineAssignConfigWindow();
             _workloadReportPage = new WorkloadReportPage();
             _currentPage = _workflowControl;
         }   
@@ -91,6 +91,12 @@ namespace CafedralReportingWPF
         private void Click_DispConfig(object sender, RoutedEventArgs e)
         {
             var window = new DisciplineConfigWindow();
+            window.ShowDialog();
+        }
+
+        private void Click_StaticConfig_View(object sender, RoutedEventArgs e)
+        {
+            var window = new StaticWorkflowConfigWindow();
             window.ShowDialog();
         }
     }

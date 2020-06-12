@@ -16,7 +16,9 @@
                 <MenuItem Click="Click_YearConfig" Header="Учебные годы" />
                 <MenuItem Click="Click_EmployeeConfig" Header="Преподаватели" />
                 <MenuItem Click="Click_GroupConfig" Header="Группы" />
-                <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины" />
+                <Separator />
+                <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины (импорт)" />
+                <MenuItem Click="Click_StaticConfig_View" Header="Назанчение дисциплины (static)" />
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>

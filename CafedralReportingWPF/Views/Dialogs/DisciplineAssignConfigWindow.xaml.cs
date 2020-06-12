@@ -7,10 +7,10 @@ using System.Windows.Controls;
 namespace CafedralReportingWPF.Views
 {
 
-    public partial class DisciplineConfigPage : Page
+    public partial class DisciplineAssignConfigWindow : Page
     {
         private Context _context; 
-        public DisciplineConfigPage()
+        public DisciplineAssignConfigWindow()
         {
             InitializeComponent();
             _context = DbContextSingleton.GetContext();
