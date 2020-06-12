@@ -99,5 +99,11 @@ namespace CafedralReportingWPF
             var window = new StaticWorkflowConfigWindow();
             window.ShowDialog();
         }
+
+        private void Click_BlacklistConfig(object sender, RoutedEventArgs e)
+        {
+            var window = new DisciplineBlacklistConfigWindow();
+            window.ShowDialog();
+        }
     }
 }

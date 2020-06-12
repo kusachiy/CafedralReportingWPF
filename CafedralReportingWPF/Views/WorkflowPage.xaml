@@ -57,10 +57,11 @@
         <DataGrid
             x:Name="myDataGrid"
             Grid.Row="1"
+            Margin="0,1,0,-1"
             x:FieldModifier="public"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            CanUserDeleteRows="False"
+            CanUserDeleteRows="True"
             ColumnWidth="*"
             IsReadOnly="True"
             ItemsSource="{Binding}"

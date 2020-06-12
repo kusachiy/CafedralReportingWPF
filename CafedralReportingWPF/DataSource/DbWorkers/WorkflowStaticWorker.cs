@@ -11,8 +11,12 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
 {
     public static class WorkflowStaticWorker
     {
+        public static List<string> Log { get; set; }
+
         public static void ImportWorkflow(Context context, List<ImportWorkflowModel> models)
         {
+            Log = new List<string>();
+            var blackList = context.BlacklistDisciplines.ToList();
             var years = context.AcademicYears.ToList();
             var groups = context.StudyGroups.ToList();
             var disciplines = context.Disciplines.ToList();
@@ -22,6 +26,11 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
             var workflows = context.Workflows;
             foreach (var model in models)
             {
+                if (blackList.Any(b => b.Name == model.DisciplineName))
+                {
+                    Log.Add($"Дисциплина {model.DisciplineName} проигрнорирована в соответствии с чёрным списком.");
+                    continue;
+                };    
                 var year = years.FirstOrDefault(y => y.FullYearName == model.Year);
                 var discipline = disciplines.FirstOrDefault(d => d.DisciplineName == model.DisciplineName);
                 var semester = semesters.FirstOrDefault(s => s.SemesterNumber == model.Semester);

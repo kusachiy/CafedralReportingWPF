@@ -14,6 +14,7 @@ namespace CafedralReportingWPF.DataSource
         {
         }
         public DbSet<Discipline> Disciplines { get; set; }
+        public DbSet<BlacklistDiscipline> BlacklistDisciplines { get; set; }
         public DbSet<Semester> Semesters { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<AcademicYear> AcademicYears { get; set; }

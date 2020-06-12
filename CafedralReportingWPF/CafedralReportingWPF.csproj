@@ -141,6 +141,7 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\DatatableDataImporter.cs" />
     <Compile Include="Models\Agreement.cs" />
+    <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />
     <Compile Include="Models\StaticWorkflow.cs" />
     <Compile Include="Reports\Datasets\SemesterDataset.cs">
@@ -158,6 +159,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DisciplineBlacklistConfigWindow.xaml.cs">
+      <DependentUpon>DisciplineBlacklistConfigWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\StaticWorkflowConfigWindow.xaml.cs">
       <DependentUpon>StaticWorkflowConfigWindow.xaml</DependentUpon>
@@ -192,6 +196,10 @@
     <Compile Include="Views\WorkflowPage.xaml.cs">
       <DependentUpon>WorkflowPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Dialogs\DisciplineBlacklistConfigWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Dialogs\StaticWorkflowConfigWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

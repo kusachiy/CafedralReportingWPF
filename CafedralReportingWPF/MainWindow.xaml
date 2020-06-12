@@ -11,11 +11,12 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Конфигурация">
-                <MenuItem Click="Click_DispConfig" Header="Дисциплины" />
+                <MenuItem Click="Click_DispConfig" Header="Список дисциплин" />
                 <MenuItem Click="Click_SemConfig" Header="Семестры" />
                 <MenuItem Click="Click_YearConfig" Header="Учебные годы" />
-                <MenuItem Click="Click_EmployeeConfig" Header="Преподаватели" />
-                <MenuItem Click="Click_GroupConfig" Header="Группы" />
+                <MenuItem Click="Click_EmployeeConfig" Header="Список преподавателей" />
+                <MenuItem Click="Click_BlacklistConfig" Header="Игнорируемые при импорте дисциплины" />
+                <MenuItem Click="Click_GroupConfig" Header="Учебные группы" />
                 <Separator />
                 <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины (импорт)" />
                 <MenuItem Click="Click_StaticConfig_View" Header="Назанчение дисциплины (static)" />
