@@ -8,6 +8,7 @@
     Title="WokrflowDialog"
     Width="800"
     Height="600"
+    Loaded="Window_Loaded"
     mc:Ignorable="d">
     <Grid Margin="5">
         <Grid.RowDefinitions>
@@ -45,7 +46,8 @@
             Grid.Column="2"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center"
+            SelectedItem="{Binding Discipline}" />
         <DockPanel Grid.Column="4">
             <Label VerticalAlignment="Center">Семестр:</Label>
             <ComboBox
@@ -53,7 +55,8 @@
                 Grid.Column="3"
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Stretch"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                SelectedItem="{Binding Semester}" />
 
         </DockPanel>
         <Label
@@ -68,7 +71,8 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center"
+            SelectedItem="{Binding Group}" />
         <Label
             Grid.Row="1"
             Grid.Column="2"
@@ -81,7 +85,8 @@
             Grid.Row="1"
             Grid.Column="3"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center"
+            SelectedItem="{Binding WorkflowYear}" />
         <DockPanel
             Grid.Row="1"
             Grid.Column="4"
@@ -91,7 +96,8 @@
                 Name="IsElevtiveCombobox"
                 Grid.Column="3"
                 Grid.ColumnSpan="2"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding IsElective}" />
         </DockPanel>
         <DockPanel
             Grid.Row="2"
@@ -101,7 +107,8 @@
             <CheckBox
                 Name="IsDSCombobox"
                 Grid.Column="3"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding IsDS}" />
         </DockPanel>
         <DockPanel
             Grid.Row="2"
@@ -113,7 +120,8 @@
                 Grid.Column="3"
                 Width="50"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                Text="{Binding Lectures}" />
         </DockPanel>
         <DockPanel
             Grid.Row="2"
@@ -125,7 +133,8 @@
                 Grid.Column="3"
                 Width="50"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                Text="{Binding Practices}" />
         </DockPanel>
         <DockPanel
             Grid.Row="2"
@@ -137,7 +146,8 @@
                 Grid.Column="3"
                 Width="50"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                Text="{Binding Labs}" />
         </DockPanel>
         <DockPanel
             Grid.Row="2"
@@ -147,14 +157,16 @@
             <CheckBox
                 Name="KRCombobox"
                 Grid.Column="3"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding KR}" />
         </DockPanel>
         <DockPanel Grid.Row="3" HorizontalAlignment="Center">
             <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Курсовой проект:</Label>
             <CheckBox
                 Name="KPCombobox"
                 Grid.Column="3"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding KP}" />
         </DockPanel>
         <DockPanel
             Grid.Row="3"
@@ -164,7 +176,8 @@
             <CheckBox
                 Name="ExamCombobox"
                 Grid.Column="3"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding Examen}" />
         </DockPanel>
         <DockPanel
             Grid.Row="3"
@@ -174,21 +187,28 @@
             <CheckBox
                 Name="ZachCombobox"
                 Grid.Column="3"
-                VerticalAlignment="Center" />
+                VerticalAlignment="Center"
+                IsChecked="{Binding Zachet}" />
         </DockPanel>
         <DockPanel
             Grid.Row="3"
             Grid.Column="3"
             HorizontalAlignment="Center">
             <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Контрольная:</Label>
-            <CheckBox Name="KontrCombobox" VerticalAlignment="Center" />
+            <CheckBox
+                Name="KontrCombobox"
+                VerticalAlignment="Center"
+                IsChecked="{Binding Controlnaya}" />
         </DockPanel>
         <DockPanel
             Grid.Row="3"
             Grid.Column="4"
             HorizontalAlignment="Center">
             <Label HorizontalAlignment="Stretch" VerticalAlignment="Center">Консультация:</Label>
-            <CheckBox Name="ConsultCombobox" VerticalAlignment="Center" />
+            <CheckBox
+                Name="ConsultCombobox"
+                VerticalAlignment="Center"
+                IsChecked="{Binding Consultation}" />
         </DockPanel>
         <Label
             Grid.Row="4"
@@ -202,7 +222,8 @@
             Grid.Row="4"
             Grid.Column="1"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center"
+            SelectedItem="{Binding Employee}" />
 
         <Label
             Grid.Row="4"
@@ -216,12 +237,13 @@
             Grid.Row="4"
             Grid.Column="3"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Center" />
+            VerticalAlignment="Center"
+            SelectedItem="{Binding Agreement}" />
         <Button
             Grid.Row="5"
             Grid.Column="1"
             Click="Accept_Click"
-            Content="Сохранить" />
+            Content="Сохранить" Height="50" VerticalAlignment="Bottom" />
         <Button
             Grid.Row="5"
             Grid.Column="3"

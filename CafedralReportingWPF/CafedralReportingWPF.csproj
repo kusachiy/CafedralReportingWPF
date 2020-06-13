@@ -140,6 +140,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\DatatableDataImporter.cs" />
+    <Compile Include="Helpers\ExtendedStaticWorkflow.cs" />
     <Compile Include="Models\Agreement.cs" />
     <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />

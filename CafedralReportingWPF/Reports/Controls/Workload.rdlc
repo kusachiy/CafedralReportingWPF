@@ -121,6 +121,34 @@
           <DataField>StudyYear</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CafRuk">
+          <DataField>CafRuk</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Value1">
+          <DataField>Value1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Value2">
+          <DataField>Value2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Value3">
+          <DataField>Value3</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Value4">
+          <DataField>Value4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Value5">
+          <DataField>Value5</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="OtherWork">
+          <DataField>OtherWork</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>WorkloadDataset</rd:DataSetName>
@@ -299,25 +327,25 @@
                   <Width>0.54438cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.48686cm</Width>
+                  <Width>0.69853cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.64025cm</Width>
+                  <Width>0.90483cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.77446cm</Width>
+                  <Width>0.45696cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.62108cm</Width>
+                  <Width>0.88566cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75528cm</Width>
+                  <Width>0.86111cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.65942cm</Width>
+                  <Width>0.924cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69777cm</Width>
+                  <Width>0.8036cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.73611cm</Width>
@@ -329,7 +357,7 @@
                   <Width>0.69777cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.52522cm</Width>
+                  <Width>1.00826cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.88604cm</Width>
@@ -6657,7 +6685,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -6853,14 +6880,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox151">
+                        <Textbox Name="result9">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!WeeksInSemester.Value*30*Fields!LearnPracticies.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -6869,7 +6896,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox151</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -6885,14 +6911,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox148">
+                        <Textbox Name="result10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!WeeksInSemester.Value*10*Fields!WorkPracticies.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -6901,7 +6927,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox148</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -6917,14 +6942,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox145">
+                        <Textbox Name="result11">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!WeeksInSemester.Value*Fields!DiplomaPracticies.Value*Fields!CountOfStudents.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -6933,7 +6958,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox145</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -6981,14 +7005,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox160">
+                        <Textbox Name="result12">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!GEK.Value*Fields!Value1.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -6997,7 +7021,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox160</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7013,14 +7036,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox157">
+                        <Textbox Name="result13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!GAK.Value*Fields!Value1.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7029,7 +7052,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox157</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7045,14 +7067,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox172">
+                        <Textbox Name="result14">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!GAKPred.Value*Fields!Value1.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7061,7 +7083,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox172</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7077,14 +7098,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox169">
+                        <Textbox Name="result15">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!DPRuk.Value*Fields!Value1.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7093,7 +7114,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox169</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7205,14 +7225,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox175">
+                        <Textbox Name="result16">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!OtherWork.Value * Fields!Value1.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7221,7 +7241,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox175</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7301,14 +7320,14 @@ Fields!Examen.Value)</Value>
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox68">
+                        <Textbox Name="result17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=code.GetIntOrEmptyString(Fields!CafRuk.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -7317,7 +7336,6 @@ Fields!Examen.Value)</Value>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox68</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -7347,7 +7365,16 @@ Fields!Examen.Value)</Value>
 +code.GetValueOrZero(Reportitems!result5.Value)
 +code.GetValueOrZero(Reportitems!result6.Value)
 +code.GetValueOrZero(Reportitems!result7.Value)
-+code.GetValueOrZero(Reportitems!result8.Value)</Value>
++code.GetValueOrZero(Reportitems!result8.Value)
++code.GetValueOrZero(Reportitems!result9.Value)
++code.GetValueOrZero(Reportitems!result10.Value)
++code.GetValueOrZero(Reportitems!result11.Value)
++code.GetValueOrZero(Reportitems!result12.Value)
++code.GetValueOrZero(Reportitems!result13.Value)
++code.GetValueOrZero(Reportitems!result14.Value)
++code.GetValueOrZero(Reportitems!result15.Value)
++code.GetValueOrZero(Reportitems!result16.Value)
++code.GetValueOrZero(Reportitems!result17.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.0;(0.0)</Format>
@@ -7369,6 +7396,7 @@ Fields!Examen.Value)</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -7487,7 +7515,7 @@ Fields!Examen.Value)</Value>
             <PageName>Бакалавры_ПИН</PageName>
             <Top>0.9876cm</Top>
             <Height>6.62846cm</Height>
-            <Width>46.13646cm</Width>
+            <Width>47.51908cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

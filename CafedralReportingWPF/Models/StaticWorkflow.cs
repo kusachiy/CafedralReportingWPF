@@ -16,7 +16,7 @@ namespace CafedralReportingWPF.Models
 
         public string DisciplineName { get; set; }
 
-        public int SemesterId { get; set; }
+        public int? SemesterId { get; set; }
         [ForeignKey("SemesterId")]
         public Semester Semester { get; set; }
 
@@ -25,6 +25,8 @@ namespace CafedralReportingWPF.Models
         public float Value3 { get; set; }
         public float Value4 { get; set; }
         public float Value5 { get; set; }
+
+        public bool Zachet { get; set; }
 
         public int? EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

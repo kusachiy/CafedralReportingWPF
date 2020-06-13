@@ -61,7 +61,6 @@
             x:FieldModifier="public"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            CanUserDeleteRows="True"
             ColumnWidth="*"
             IsReadOnly="True"
             ItemsSource="{Binding}"

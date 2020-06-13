@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Data.Entity;
 
 namespace CafedralReportingWPF.Views
 {
@@ -19,7 +20,7 @@ namespace CafedralReportingWPF.Views
         {
             InitializeComponent();            
         }        
-        private void LoadReport(YearViewModel year)
+        private void LoadReport(YearViewModel yearModel)
         {
             _reportViewer.Reset();
 
@@ -32,12 +33,16 @@ namespace CafedralReportingWPF.Views
             _reportViewer.LocalReport.ReportPath = @"./Reports/Controls/Workload.rdlc";
             dataset.EndInit();
             
-            //fill data into adventureWorksDataSet
             var context = DbContextSingleton.GetContext();
-            //var workflows = WorkflowStaticWorker.GetAllWorkflows(context);
-            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,year.Id);
 
-            DatatableDataImporter.FillWorkloadDataset(dataset.DataTable2, workflows);
+            var year = context.AcademicYears.FirstOrDefault(y => y.Id == yearModel.Id);
+            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,yearModel.Id);
+            var statics = context.StaticWorkflows.Include(s=>s.Employee).Include(s=>s.Employee2).Include(s => s.Employee3).Include(s => s.Employee4).Include(s => s.Employee5)
+                .Include(s => s.Agreement).Include(s => s.Semester)
+                .Where(s => s.IsEnabled).ToList();
+            //var ext = statics.Select(s=>new ExtendedStaticWorkflow(s,year)).ToList();
+
+            DatatableDataImporter.FillWorkloadDataset(dataset.DataTable2, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
 
             _reportViewer.RefreshReport();
         }

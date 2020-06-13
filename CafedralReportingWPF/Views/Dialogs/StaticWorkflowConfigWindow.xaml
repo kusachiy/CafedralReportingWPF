@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="1000"
+    Width="1200"
     Height="500"
     Loaded="Page_Loaded"
     mc:Ignorable="d">
@@ -18,7 +18,9 @@
             x:FieldModifier="public"
             AutoGenerateColumns="False"
             ColumnWidth="*"
-            ItemsSource="{Binding}">
+            HorizontalScrollBarVisibility="Visible"
+            ItemsSource="{Binding}"
+            MinColumnWidth="70">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="Id" />
                 <DataGridCheckBoxColumn Binding="{Binding IsEnabled}" Header="Вкл./выкл." />
@@ -30,6 +32,7 @@
                     Width="2*"
                     Binding="{Binding DisciplineName}"
                     Header="Имя дисциплины" />
+                <DataGridCheckBoxColumn Binding="{Binding Zachet}" Header="Зачёт" />
                 <DataGridComboBoxColumn
                     x:Name="EmployeesCombobox"
                     Header="Employee"

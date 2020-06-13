@@ -7,7 +7,7 @@ namespace CafedralReportingWPF.Helpers
 {
     public static class DatatableDataImporter
     {
-        public static void FillSemesterDataset(DataTable1DataTable datatable, List<Workflow> workflows)
+        public static void FillSemesterDataset(DataTable1DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics)
         {
             foreach (var w in workflows)
             {
@@ -16,14 +16,45 @@ namespace CafedralReportingWPF.Helpers
                     ,w.Semester.CountOfWeeks,w.Agreement?.Description,w.Semester.SemesterNumber.ToString(),w.WorkflowYear.FullYearName,w.Group.CountOfSubgroups);
 
             }
+            foreach (var s in statics)
+            {
+                datatable.AddDataTable1Row(s.Group.FullName, s.DisciplineName, 0, (s.DisciplineName.Contains("практика") ? (int)s.Value1 : 0),
+                    0, s.Group.CountOfStudents,0, 0, 0, GetInt(s.Zachet)
+                    , ConcatanateEmployees(s)
+                    , s.Semester.CountOfWeeks, s.Agreement?.Description, s.Semester.SemesterNumber.ToString(), s.AcademicYear.FullYearName, 1);
+            }
         }
-        public static void FillWorkloadDataset(DataTable2DataTable datatable, List<Workflow> workflows)
+        public static void FillWorkloadDataset(DataTable2DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics)
         {
             foreach (var w in workflows)
             {
                 datatable.AddDataTable2Row("",w.Discipline.DisciplineName,"ПИН","ФИТ",w.Semester.SemesterNumber,w.Group.CountOfStudents,w.Semester.CountOfWeeks,1,w.Group.CountOfSubgroups,w.Lectures,w.Practices,w.Labs
-                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName);
+                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName,0,0,0,0,0,0,0);
+            }
+            foreach (var s in statics)
+            {
+                var lowerD = s.DisciplineName.ToLower();
 
+                datatable.AddDataTable2Row("", s.DisciplineName, "ПИН", "ФИТ", s.Semester.SemesterNumber, s.Group.CountOfStudents,
+                    (lowerD.Contains("практика")?(int)s.Value1:0)
+                    ,1, 1, 0, 0, 0
+                    , 0, GetInt(s.Zachet), 0, 0, 0,
+                    (lowerD=="учебная практика"?1:0), 
+                    (lowerD.Contains("производственная практика") ? 1 : 0),
+                    (lowerD.Contains("преддипломная практика") ? 1 : 0),
+                    (lowerD=="государственный экзамен бакалавров" ? 1 : 0),
+                    (lowerD == "работа гак" ? 1 : 0),
+                    (lowerD == "председатель гак" ? 1 : 0),
+                    (lowerD == "диссертация бакалавры" ? 1 : 0),                     
+                    s.Employee.FullName, s.AcademicYear.FullYearName,
+                    (lowerD == "руководство кафедрой" ? 1 : 0),
+                    s.Value1,
+                    s.Value2,
+                    s.Value3,
+                    s.Value4,
+                    s.Value5,
+                    (lowerD == "Руководство аспирантами" || lowerD == "Прем экзаменов кандидат. и аспирант." ?1:0)
+                    );
             }
         }
         private static int GetInt(bool p)
@@ -43,7 +74,20 @@ namespace CafedralReportingWPF.Helpers
                 str += ", " + w.Employee5.FullName;
             return str;
         }
-        
+        private static string ConcatanateEmployees(ExtendedStaticWorkflow w)
+        {
+            string str = w.Employee?.FullName ?? "";
+            if (w.Employee2 != null)
+                str += ", " + w.Employee2.FullName;
+            if (w.Employee3 != null)
+                str += ", " + w.Employee3.FullName;
+            if (w.Employee4 != null)
+                str += ", " + w.Employee4.FullName;
+            if (w.Employee5 != null)
+                str += ", " + w.Employee5.FullName;
+            return str;
+        }
+
     }
 
   

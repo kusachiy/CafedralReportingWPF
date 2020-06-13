@@ -32,7 +32,7 @@ namespace CafedralReportingWPF.Views
             InitializeComponent();            
         }
 
-        private void LoadReport(bool isAutumn, YearViewModel year)
+        private void LoadReport(bool isAutumn, YearViewModel yearModel)
         {
             _reportViewer.Reset();
 
@@ -48,9 +48,11 @@ namespace CafedralReportingWPF.Views
             //fill data into adventureWorksDataSet
             var context = DbContextSingleton.GetContext();
             //var workflows = WorkflowStaticWorker.GetAllWorkflows(context);
+            var year = context.AcademicYears.FirstOrDefault(y => y.Id == yearModel.Id);
             var workflows = WorkflowStaticWorker.GetAllWorkflowBySemesterAndYear(context,isAutumn,year.Id);
+            var statics = context.StaticWorkflows.Where(s => s.IsEnabled).Select(s => new ExtendedStaticWorkflow(s, year)).ToList();
 
-            DatatableDataImporter.FillSemesterDataset(dataset.DataTable1, workflows);
+            DatatableDataImporter.FillSemesterDataset(dataset.DataTable1, workflows,statics);
 
             _reportViewer.RefreshReport();
         }
