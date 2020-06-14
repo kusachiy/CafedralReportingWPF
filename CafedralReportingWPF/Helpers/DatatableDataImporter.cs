@@ -29,31 +29,40 @@ namespace CafedralReportingWPF.Helpers
             foreach (var w in workflows)
             {
                 datatable.AddDataTable2Row("",w.Discipline.DisciplineName,"ПИН","ФИТ",w.Semester.SemesterNumber,w.Group.CountOfStudents,w.Semester.CountOfWeeks,1,w.Group.CountOfSubgroups,w.Lectures,w.Practices,w.Labs
-                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName,0,0,0,0,0,0,0);
+                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName,0,0,0,0,0,0,0,0,0,0,0,0,false,0,0,0);
             }
             foreach (var s in statics)
             {
                 var lowerD = s.DisciplineName.ToLower();
 
                 datatable.AddDataTable2Row("", s.DisciplineName, "ПИН", "ФИТ", s.Semester.SemesterNumber, s.Group.CountOfStudents,
-                    (lowerD.Contains("практика")?(int)s.Value1:0)
-                    ,1, 1, 0, 0, 0
+                    (lowerD.Contains("практика") ? (int)s.Value1 : 0)
+                    , 1, 1, 0, 0, 0
                     , 0, GetInt(s.Zachet), 0, 0, 0,
-                    (lowerD=="учебная практика"?1:0), 
+                    (lowerD == "учебная практика" ? 1 : 0),
                     (lowerD.Contains("производственная практика") ? 1 : 0),
                     (lowerD.Contains("преддипломная практика") ? 1 : 0),
-                    (lowerD=="государственный экзамен бакалавров" ? 1 : 0),
+                    (lowerD == "государственный экзамен бакалавров" ? 1 : 0),
                     (lowerD == "работа гак" ? 1 : 0),
                     (lowerD == "председатель гак" ? 1 : 0),
-                    (lowerD == "диссертация бакалавры" ? 1 : 0),                     
+                    (lowerD == "диссертация бакалавры" ? 1 : 0),
                     s.Employee.FullName, s.AcademicYear.FullYearName,
                     (lowerD == "руководство кафедрой" ? 1 : 0),
                     s.Value1,
                     s.Value2,
+                    (lowerD == "руководство аспирантами" || lowerD == "прием экзаменов кандидат. и аспирант." ? 1 : 0),
+                    (s.Dictionary.ContainsKey("Калабин А.Л.") ? s.Dictionary["Калабин А.Л."] : 0),
+                    (s.Dictionary.ContainsKey("Биллиг В.А.") ? s.Dictionary["Биллиг В.А."] : 0),
+                    (s.Dictionary.ContainsKey("Мальков А.А.") ? s.Dictionary["Мальков А.А."] : 0),
+                    (s.Dictionary.ContainsKey("Артемов И.Ю.") ? s.Dictionary["Артемов И.Ю."] : 0),
+                    (s.Dictionary.ContainsKey("Котлинский С.В.") ? s.Dictionary["Котлинский С.В."] : 0),
+                    (s.Dictionary.ContainsKey("Прохныч А.Н.") ? s.Dictionary["Прохныч А.Н."] : 0),
+                    (s.Dictionary.ContainsKey("Югов И.В.") ? s.Dictionary["Югов И.В."] : 0),
+                    (s.Dictionary.ContainsKey("Вакансия") ? s.Dictionary["Вакансия"] : 0),
+                    s.Employee2 != null,
                     s.Value3,
                     s.Value4,
-                    s.Value5,
-                    (lowerD == "Руководство аспирантами" || lowerD == "Прем экзаменов кандидат. и аспирант." ?1:0)
+                    s.Value5
                     );
             }
         }

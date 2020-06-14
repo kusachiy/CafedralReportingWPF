@@ -47,5 +47,6 @@ namespace CafedralReportingWPF.Models
         public int? AgreementId { get; set; }
         [ForeignKey("AgreementId")]
         public Agreement Agreement { get; set; }
+       
     }
 }

@@ -38,9 +38,21 @@ namespace CafedralReportingWPF.Helpers
         public StudyGroup Group { get; set; }
         public AcademicYear AcademicYear { get; set; }
 
+        public Dictionary<string, double> Dictionary { get; set; }
+
         public ExtendedStaticWorkflow()
         {
-
+            Dictionary = new Dictionary<string, double>();
+            if(Employee!=null)
+                Dictionary.Add(Employee?.FullName, Value1);
+            if(Employee2!=null)
+                Dictionary.Add(Employee2?.FullName, Value2);
+            if (Employee3 != null)
+                Dictionary.Add(Employee3?.FullName, Value3);
+            if (Employee4 != null)
+                Dictionary.Add(Employee4?.FullName, Value4);
+            if (Employee5 != null)
+                Dictionary.Add(Employee5?.FullName, Value5);
         }
         public ExtendedStaticWorkflow(StaticWorkflow workflow, AcademicYear currentYear)
         {
@@ -64,6 +76,18 @@ namespace CafedralReportingWPF.Helpers
 
             Group = GetActualGroup(workflow.Semester, currentYear);
             AcademicYear = currentYear;
+
+            Dictionary = new Dictionary<string, double>();
+            if (Employee != null)
+                Dictionary.Add(Employee?.FullName, Value1);
+            if (Employee2 != null)
+                Dictionary.Add(Employee2?.FullName, Value2);
+            if (Employee3 != null)
+                Dictionary.Add(Employee3?.FullName, Value3);
+            if (Employee4 != null)
+                Dictionary.Add(Employee4?.FullName, Value4);
+            if (Employee5 != null)
+                Dictionary.Add(Employee5?.FullName, Value5);
         }
 
         private static StudyGroup GetActualGroup(Semester semester, AcademicYear year)
