@@ -39,14 +39,16 @@ namespace CafedralReportingWPF.Views
             var context = DbContextSingleton.GetContext();
 
             var year = context.AcademicYears.FirstOrDefault(y => y.Id == yearModel.Id);
-            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,yearModel.Id).Where(w=>w.Agreement.Description=="Договор").ToList();
+            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,yearModel.Id)
+                .Where(w=>w.Agreement.Description=="Договор" && w.EmployeeId == employee.Id).ToList();
             var statics = context.StaticWorkflows               
                 .Include(s=>s.Employee).Include(s=>s.Employee2).Include(s => s.Employee3).Include(s => s.Employee4).Include(s => s.Employee5)
                 .Include(s => s.Agreement).Include(s => s.Semester)
                 .Where(s => s.IsEnabled && s.Agreement.Description == "Договор").ToList();
+            statics = statics.Where(s => s.ContainsEmployeeById(employee.Id)).ToList();
             //var ext = statics.Select(s=>new ExtendedStaticWorkflow(s,year)).ToList();
 
-            DatatableDataImporter.FillContactDataset(dataset.DataTable4, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
+            DatatableDataImporter.FillContactDataset(dataset.DataTable4, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList(),employee);
 
             _reportViewer.RefreshReport();
         }

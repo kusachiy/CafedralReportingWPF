@@ -12,7 +12,7 @@
   <xs:element name="Contract" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Contract" msprop:Generator_UserDSName="Contract">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable4" msprop:Generator_TableClassName="DataTable4DataTable" msprop:Generator_TableVarName="tableDataTable4" msprop:Generator_RowChangedName="DataTable4RowChanged" msprop:Generator_TablePropName="DataTable4" msprop:Generator_RowDeletingName="DataTable4RowDeleting" msprop:Generator_RowChangingName="DataTable4RowChanging" msprop:Generator_RowEvHandlerName="DataTable4RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable4RowDeleted" msprop:Generator_RowClassName="DataTable4Row" msprop:Generator_UserTableName="DataTable4" msprop:Generator_RowEvArgName="DataTable4RowChangeEvent">
+        <xs:element name="DataTable4" msprop:Generator_TableClassName="DataTable4DataTable" msprop:Generator_TableVarName="tableDataTable4" msprop:Generator_TablePropName="DataTable4" msprop:Generator_RowDeletingName="DataTable4RowDeleting" msprop:Generator_RowChangingName="DataTable4RowChanging" msprop:Generator_RowEvHandlerName="DataTable4RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable4RowDeleted" msprop:Generator_UserTableName="DataTable4" msprop:Generator_RowChangedName="DataTable4RowChanged" msprop:Generator_RowEvArgName="DataTable4RowChangeEvent" msprop:Generator_RowClassName="DataTable4Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Assignee" msprop:Generator_ColumnVarNameInTable="columnAssignee" msprop:Generator_ColumnPropNameInRow="Assignee" msprop:Generator_ColumnPropNameInTable="AssigneeColumn" msprop:Generator_UserColumnName="Assignee" type="xs:string" minOccurs="0" />
@@ -31,6 +31,7 @@
               <xs:element name="GAK" msprop:Generator_ColumnVarNameInTable="columnGAK" msprop:Generator_ColumnPropNameInRow="GAK" msprop:Generator_ColumnPropNameInTable="GAKColumn" msprop:Generator_UserColumnName="GAK" type="xs:double" minOccurs="0" />
               <xs:element name="DisciplineName" msprop:Generator_ColumnVarNameInTable="columnDisciplineName" msprop:Generator_ColumnPropNameInRow="DisciplineName" msprop:Generator_ColumnPropNameInTable="DisciplineNameColumn" msprop:Generator_UserColumnName="DisciplineName" type="xs:string" minOccurs="0" />
               <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName" type="xs:string" minOccurs="0" />
+              <xs:element name="Other" msprop:Generator_ColumnVarNameInTable="columnOther" msprop:Generator_ColumnPropNameInRow="Other" msprop:Generator_ColumnPropNameInTable="OtherColumn" msprop:Generator_UserColumnName="Other" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

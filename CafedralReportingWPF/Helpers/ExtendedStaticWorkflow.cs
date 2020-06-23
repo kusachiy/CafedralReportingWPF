@@ -97,5 +97,20 @@ namespace CafedralReportingWPF.Helpers
             var group = context.StudyGroups.FirstOrDefault(s => s.EntryYear == year.StartYear - course+1);
             return group;
         }
+
+        public double GetValueByEmployeeId(int id)
+        {
+            if (Employee.Id == id)
+                return Value1;
+            if (Employee2.Id == id)
+                return Value2;
+            if (Employee3.Id == id)
+                return Value3;
+            if (Employee4.Id == id)
+                return Value4;
+            if (Employee5.Id == id)
+                return Value5;
+            return 0.0;
+        }
     }
 }

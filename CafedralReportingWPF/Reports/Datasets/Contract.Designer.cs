@@ -311,6 +311,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnGroupName;
             
+            private global::System.Data.DataColumn columnOther;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable4DataTable() {
@@ -474,6 +476,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn OtherColumn {
+                get {
+                    return this.columnOther;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -525,7 +535,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         double GEK, 
                         double GAK, 
                         string DisciplineName, 
-                        string GroupName) {
+                        string GroupName, 
+                        double Other) {
                 DataTable4Row rowDataTable4Row = ((DataTable4Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Assignee,
@@ -543,7 +554,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         GEK,
                         GAK,
                         DisciplineName,
-                        GroupName};
+                        GroupName,
+                        Other};
                 rowDataTable4Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable4Row);
                 return rowDataTable4Row;
@@ -582,6 +594,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnGAK = base.Columns["GAK"];
                 this.columnDisciplineName = base.Columns["DisciplineName"];
                 this.columnGroupName = base.Columns["GroupName"];
+                this.columnOther = base.Columns["Other"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -619,6 +632,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnDisciplineName);
                 this.columnGroupName = new global::System.Data.DataColumn("GroupName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGroupName);
+                this.columnOther = new global::System.Data.DataColumn("Other", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOther);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1017,6 +1032,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double Other {
+                get {
+                    try {
+                        return ((double)(this[this.tableDataTable4.OtherColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Other\' in table \'DataTable4\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable4.OtherColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAssigneeNull() {
                 return this.IsNull(this.tableDataTable4.AssigneeColumn);
             }
@@ -1205,6 +1236,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGroupNameNull() {
                 this[this.tableDataTable4.GroupNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsOtherNull() {
+                return this.IsNull(this.tableDataTable4.OtherColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetOtherNull() {
+                this[this.tableDataTable4.OtherColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -145,6 +145,9 @@
     <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />
     <Compile Include="Models\StaticWorkflow.cs" />
+    <Compile Include="Reports\Datasets\Contract.cs">
+      <DependentUpon>Contract.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Datasets\Contract.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

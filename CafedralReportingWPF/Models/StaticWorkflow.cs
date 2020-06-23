@@ -47,6 +47,10 @@ namespace CafedralReportingWPF.Models
         public int? AgreementId { get; set; }
         [ForeignKey("AgreementId")]
         public Agreement Agreement { get; set; }
-       
+
+        public bool ContainsEmployeeById(int id)
+        {
+            return EmployeeId == id || Employee2Id == id || Employee3Id == id || Employee4Id == id || Employee5Id == id;
+        }
     }
 }
