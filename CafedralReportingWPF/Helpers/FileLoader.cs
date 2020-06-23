@@ -20,8 +20,7 @@ namespace CafedralReportingWPF.Helpers
                 csv.Configuration.Delimiter = ";";
                 csv.Configuration.PrepareHeaderForMatch = (string header, int index) => header.ToLower();
                 var import = csv.GetRecords<ImportWorkflowModel>();
-                var list = import.ToList();
-                records = list;
+                records = import.ToList();
             }
             return records;
         }  

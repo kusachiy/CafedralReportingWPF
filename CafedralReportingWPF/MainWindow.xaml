@@ -18,8 +18,8 @@
                 <MenuItem Click="Click_BlacklistConfig" Header="Игнорируемые при импорте дисциплины" />
                 <MenuItem Click="Click_GroupConfig" Header="Учебные группы" />
                 <Separator />
-                <MenuItem Click="Click_Config_View" Header="Назанчение дисциплины (импорт)" />
-                <MenuItem Click="Click_StaticConfig_View" Header="Назанчение дисциплины (static)" />
+                <MenuItem Click="Click_Config_View" Header="Назначение дисциплины (импорт)" />
+                <MenuItem Click="Click_StaticConfig_View" Header="Назначение дисциплины (static)" />
                 <Separator />
                 <MenuItem Header="_Exit" />
             </MenuItem>
@@ -89,6 +89,18 @@
                     FontFamily="Constantia"
                     Foreground="White">
                     Нагрузка
+                </Button>
+                <Rectangle Height="5" Fill="White" />
+                <Button
+                    Width="64"
+                    Height="64"
+                    Margin="0,5"
+                    Background="#FF16B29C"
+                    BorderBrush="White"
+                    Click="Click_Contract_Report"
+                    FontFamily="Constantia"
+                    Foreground="White">
+                    Договор
                 </Button>
             </StackPanel>
             <Frame Name="myFrame" Grid.Column="1">

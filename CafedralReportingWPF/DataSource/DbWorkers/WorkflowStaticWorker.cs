@@ -34,12 +34,13 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
                 var year = years.FirstOrDefault(y => y.FullYearName == model.Year);
                 var discipline = disciplines.FirstOrDefault(d => d.DisciplineName == model.DisciplineName);
                 var semester = semesters.FirstOrDefault(s => s.SemesterNumber == model.Semester);
-                if (discipline is null)
-                {
-
-                }
                 var etd = etds.FirstOrDefault(e => e.DisciplineId == discipline.Id);
                 var group = groups.FirstOrDefault(g => g.EntryYear == year.StartYear-semester.Course+1);
+                if (discipline is null || semester is null || year is null || group is null)
+                {
+                    Log.Add($"Импорт закончился неудачей не найден связный объект в базе данных.");
+                    return;
+                }
                 var newWorkflow = new Workflow
                 {
                     Description = "",
@@ -88,8 +89,11 @@ namespace CafedralReportingWPF.DataSource.DbWorkers
         }
         public static List<Workflow> GetAllWorkflowByYear(Context context, int yearID)
         {
-            context.Workflows.Include(w => w.Employee).Include(w => w.Employee2).Include(w => w.Employee3).Include(w => w.Employee4).Include(w => w.Employee5)
-                .Include(w => w.Discipline).Include(w => w.Semester).Include(w => w.WorkflowYear).Include(w => w.Group).Where(w=>w.WorkflowYearId==yearID).Load();
+            context.Workflows.Include(w => w.Employee).Include(w => w.Employee2).Include(w => w.Employee3)
+                .Include(w => w.Employee4).Include(w => w.Employee5)
+                .Include(w => w.Discipline).Include(w => w.Semester)
+                .Include(w => w.WorkflowYear).Include(w => w.Group).
+                Where(w=>w.WorkflowYearId==yearID).Load();
             return context.Workflows.ToList();
         }
     }

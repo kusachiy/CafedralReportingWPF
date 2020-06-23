@@ -63,7 +63,5 @@ namespace CafedralReportingWPF.Models
         public int? Employee5Id { get; set; }
         [ForeignKey("Employee5Id")]
         public Employee Employee5 { get; set; }
-
-
     }
 }

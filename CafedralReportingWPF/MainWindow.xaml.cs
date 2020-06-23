@@ -19,6 +19,7 @@ namespace CafedralReportingWPF
         SuccessPage _successPage;
         SemesterReportPage _semReportPage;
         WorkloadReportPage _workloadReportPage;
+        ContractReportPage _contractReportPage;
 
         public MainWindow()
         {
@@ -28,6 +29,7 @@ namespace CafedralReportingWPF
             _semReportPage = new SemesterReportPage();
             _disciplineConfigPage = new DisciplineAssignConfigWindow();
             _workloadReportPage = new WorkloadReportPage();
+            _contractReportPage = new ContractReportPage();
             _currentPage = _workflowControl;
         }   
 
@@ -104,6 +106,11 @@ namespace CafedralReportingWPF
         {
             var window = new DisciplineBlacklistConfigWindow();
             window.ShowDialog();
+        }
+
+        private void Click_Contract_Report(object sender, RoutedEventArgs e)
+        {
+            SetFrameContent(_contractReportPage);
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿using CafedralReportingWPF.Models;
 using System.Collections.Generic;
+using System.Linq;
+using static CafedralReportingWPF.Reports.Datasets.Contract;
 using static CafedralReportingWPF.Reports.Datasets.SemesterDataset;
 using static CafedralReportingWPF.Reports.Datasets.WorkloadDataset;
+using static CafedralReportingWPF.Reports.Datasets.WorkloadDatasetEmployee;
 
 namespace CafedralReportingWPF.Helpers
 {
@@ -29,7 +32,7 @@ namespace CafedralReportingWPF.Helpers
             foreach (var w in workflows)
             {
                 datatable.AddDataTable2Row("",w.Discipline.DisciplineName,"ПИН","ФИТ",w.Semester.SemesterNumber,w.Group.CountOfStudents,w.Semester.CountOfWeeks,1,w.Group.CountOfSubgroups,w.Lectures,w.Practices,w.Labs
-                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName,0,0,0,0,0,0,0,0,0,0,0,0,false,0,0,0);
+                    ,GetInt(w.Examen),GetInt(w.Zachet),0,GetInt(w.KR),0,0,w.PracticeWeeks,0,0,0,0,0,w.Employee.FullName,w.WorkflowYear.FullYearName,0,0,0,0,0,0,0,0,0,0,0,0,false,0,0,0,w.Agreement.Description);
             }
             foreach (var s in statics)
             {
@@ -62,10 +65,65 @@ namespace CafedralReportingWPF.Helpers
                     s.Employee2 != null,
                     s.Value3,
                     s.Value4,
-                    s.Value5
+                    s.Value5,
+                    s.Agreement.Description
                     );
             }
         }
+        public static void FillWorkloadEmployee(DataTable3DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics)
+        {
+            foreach (var w in workflows)
+            {
+                datatable.AddDataTable3Row("", w.Discipline.DisciplineName, "ПИН", "ФИТ", w.Semester.SemesterNumber, w.Group.CountOfStudents, w.Semester.CountOfWeeks, 1, w.Group.CountOfSubgroups, w.Lectures, w.Practices, w.Labs
+                    , GetInt(w.Examen), GetInt(w.Zachet), 0, GetInt(w.KR), 0, 0, w.PracticeWeeks, 0, 0, 0, 0, 0, w.Employee.FullName, w.WorkflowYear.FullYearName, 0, 0, 0, 0, w.Agreement.Description,0,false);
+            }
+            foreach (var s in statics)
+            {
+                foreach (var d in s.Dictionary)
+                {
+                    var lowerD = s.DisciplineName.ToLower();
+                    datatable.AddDataTable3Row("", s.DisciplineName, "ПИН", "ФИТ", s.Semester.SemesterNumber, s.Group.CountOfStudents,
+                        (lowerD.Contains("практика") ? (int)s.Value1 : 0)
+                        , 1, 1, 0, 0, 0
+                        , 0, GetInt(s.Zachet), 0, 0, 0,
+                        (lowerD == "учебная практика" ? 1 : 0),
+                        (lowerD.Contains("производственная практика") ? 1 : 0),
+                        (lowerD.Contains("преддипломная практика") ? 1 : 0),
+                        (lowerD == "государственный экзамен бакалавров" ? 1 : 0),
+                        (lowerD == "работа гак" ? 1 : 0),
+                        (lowerD == "председатель гак" ? 1 : 0),
+                        (lowerD == "диссертация бакалавры" ? 1 : 0),
+                        d.Key,
+                        s.AcademicYear.FullYearName,
+                        (lowerD == "руководство кафедрой" ? 1 : 0),
+                        s.Value1,
+                        s.Value2,
+                        (lowerD == "руководство аспирантами" || lowerD == "прием экзаменов кандидат. и аспирант." ? 1 : 0),
+                        s.Agreement.Description,
+                        d.Value,
+                        s.Employee2 != null
+                        );
+                }
+            }
+        }
+        public static void FillContactDataset(DataTable4DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics)
+        {
+            foreach (var w in workflows)
+            {
+                datatable.AddDataTable4Row(w.Employee.FullName,w.Semester.CountOfWeeks * w.Lectures,w.Semester.CountOfWeeks*w.Practices,w.Semester.CountOfWeeks*2*w.Group.CountOfSubgroups,
+                    GetInt(w.KR)*w.Group.CountOfStudents*2, GetInt(w.KP) * w.Group.CountOfStudents * 3,0,0,
+                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen),GetInt(w.Zachet)*w.Group.CountOfStudents*0.25,
+                    GetInt(w.Examen)*0.33*w.Group.CountOfStudents,0,0,0,w.Discipline.DisciplineName,w.Group.Name);
+            }
+            foreach (var s in statics)
+            {
+                foreach (var d in s.Dictionary)
+                {
+                    
+                }
+            }
+        }
+
         private static int GetInt(bool p)
         {
             return p ? 1 : 0;

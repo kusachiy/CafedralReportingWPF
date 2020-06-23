@@ -145,6 +145,11 @@
     <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />
     <Compile Include="Models\StaticWorkflow.cs" />
+    <Compile Include="Reports\Datasets\Contract.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contract.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Datasets\SemesterDataset.cs">
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
     </Compile>
@@ -152,6 +157,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\WorkloadDatasetEmployee.cs">
+      <DependentUpon>WorkloadDatasetEmployee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\WorkloadDatasetEmployee.Designer.cs">
+      <DependentUpon>WorkloadDatasetEmployee.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\Datasets\WorkloadDataset.cs">
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>
@@ -181,6 +194,9 @@
     </Compile>
     <Compile Include="Views\Dialogs\SemesterConfigWindow.xaml.cs">
       <DependentUpon>SemesterConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContractReportPage.xaml.cs">
+      <DependentUpon>ContractReportPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkloadReportPage.xaml.cs">
       <DependentUpon>WorkloadReportPage.xaml</DependentUpon>
@@ -249,6 +265,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ContractReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\WorkloadReportPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -295,6 +315,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Controls\Contract.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Controls\Workload.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -312,6 +335,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Reports\Datasets\Contract.xsc">
+      <DependentUpon>Contract.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\Contract.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Contract.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\Contract.xss">
+      <DependentUpon>Contract.xsd</DependentUpon>
+    </None>
     <None Include="Reports\Datasets\SemesterDataset.xsc">
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
     </None>
@@ -322,6 +356,17 @@
     </None>
     <None Include="Reports\Datasets\SemesterDataset.xss">
       <DependentUpon>SemesterDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDatasetEmployee.xsc">
+      <DependentUpon>WorkloadDatasetEmployee.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDatasetEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WorkloadDatasetEmployee.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\WorkloadDatasetEmployee.xss">
+      <DependentUpon>WorkloadDatasetEmployee.xsd</DependentUpon>
     </None>
     <None Include="Reports\Datasets\WorkloadDataset.xsc">
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>

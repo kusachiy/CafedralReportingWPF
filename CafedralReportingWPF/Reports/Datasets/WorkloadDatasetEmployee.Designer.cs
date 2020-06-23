@@ -20,17 +20,17 @@ namespace CafedralReportingWPF.Reports.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("WorkloadDataset")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WorkloadDatasetEmployee")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class WorkloadDataset : global::System.Data.DataSet {
+    public partial class WorkloadDatasetEmployee : global::System.Data.DataSet {
         
-        private DataTable2DataTable tableDataTable2;
+        private DataTable3DataTable tableDataTable3;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public WorkloadDataset() {
+        public WorkloadDatasetEmployee() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected WorkloadDataset(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WorkloadDatasetEmployee(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DataTable2"] != null)) {
-                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
+                if ((ds.Tables["DataTable3"] != null)) {
+                    base.Tables.Add(new DataTable3DataTable(ds.Tables["DataTable3"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DataTable2DataTable DataTable2 {
+        public DataTable3DataTable DataTable3 {
             get {
-                return this.tableDataTable2;
+                return this.tableDataTable3;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            WorkloadDataset cln = ((WorkloadDataset)(base.Clone()));
+            WorkloadDatasetEmployee cln = ((WorkloadDatasetEmployee)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DataTable2"] != null)) {
-                    base.Tables.Add(new DataTable2DataTable(ds.Tables["DataTable2"]));
+                if ((ds.Tables["DataTable3"] != null)) {
+                    base.Tables.Add(new DataTable3DataTable(ds.Tables["DataTable3"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDataTable2 = ((DataTable2DataTable)(base.Tables["DataTable2"]));
+            this.tableDataTable3 = ((DataTable3DataTable)(base.Tables["DataTable3"]));
             if ((initTable == true)) {
-                if ((this.tableDataTable2 != null)) {
-                    this.tableDataTable2.InitVars();
+                if ((this.tableDataTable3 != null)) {
+                    this.tableDataTable3.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "WorkloadDataset";
+            this.DataSetName = "WorkloadDatasetEmployee";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/WorkloadDataset.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDataTable2 = new DataTable2DataTable();
-            base.Tables.Add(this.tableDataTable2);
+            this.tableDataTable3 = new DataTable3DataTable();
+            base.Tables.Add(this.tableDataTable3);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeDataTable2() {
+        private bool ShouldSerializeDataTable3() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            WorkloadDataset ds = new WorkloadDataset();
+            WorkloadDatasetEmployee ds = new WorkloadDatasetEmployee();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void DataTable2RowChangeEventHandler(object sender, DataTable2RowChangeEvent e);
+        public delegate void DataTable3RowChangeEventHandler(object sender, DataTable3RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DataTable2DataTable : global::System.Data.TypedTableBase<DataTable2Row> {
+        public partial class DataTable3DataTable : global::System.Data.TypedTableBase<DataTable3Row> {
             
             private global::System.Data.DataColumn columnNumberPP;
             
@@ -339,36 +339,16 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnOtherWork;
             
-            private global::System.Data.DataColumn columnKalabin;
+            private global::System.Data.DataColumn columnAgreement;
             
-            private global::System.Data.DataColumn columnBillig;
-            
-            private global::System.Data.DataColumn columnMalkoff;
-            
-            private global::System.Data.DataColumn columnArtemov;
-            
-            private global::System.Data.DataColumn columnKotlin;
-            
-            private global::System.Data.DataColumn columnProkhnych;
-            
-            private global::System.Data.DataColumn columnYugov;
-            
-            private global::System.Data.DataColumn columnVakansiya;
+            private global::System.Data.DataColumn columnSecretValue;
             
             private global::System.Data.DataColumn columnIsMultiEmployee;
             
-            private global::System.Data.DataColumn columnValue3;
-            
-            private global::System.Data.DataColumn columnValue4;
-            
-            private global::System.Data.DataColumn columnValue5;
-            
-            private global::System.Data.DataColumn columnAgreement;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2DataTable() {
-                this.TableName = "DataTable2";
+            public DataTable3DataTable() {
+                this.TableName = "DataTable3";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -376,7 +356,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable2DataTable(global::System.Data.DataTable table) {
+            internal DataTable3DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -393,7 +373,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected DataTable2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DataTable3DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -640,65 +620,17 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn KalabinColumn {
+            public global::System.Data.DataColumn AgreementColumn {
                 get {
-                    return this.columnKalabin;
+                    return this.columnAgreement;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BilligColumn {
+            public global::System.Data.DataColumn SecretValueColumn {
                 get {
-                    return this.columnBillig;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn MalkoffColumn {
-                get {
-                    return this.columnMalkoff;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ArtemovColumn {
-                get {
-                    return this.columnArtemov;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn KotlinColumn {
-                get {
-                    return this.columnKotlin;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ProkhnychColumn {
-                get {
-                    return this.columnProkhnych;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn YugovColumn {
-                get {
-                    return this.columnYugov;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn VakansiyaColumn {
-                get {
-                    return this.columnVakansiya;
+                    return this.columnSecretValue;
                 }
             }
             
@@ -707,38 +639,6 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public global::System.Data.DataColumn IsMultiEmployeeColumn {
                 get {
                     return this.columnIsMultiEmployee;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Value3Column {
-                get {
-                    return this.columnValue3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Value4Column {
-                get {
-                    return this.columnValue4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Value5Column {
-                get {
-                    return this.columnValue5;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn AgreementColumn {
-                get {
-                    return this.columnAgreement;
                 }
             }
             
@@ -753,33 +653,33 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2Row this[int index] {
+            public DataTable3Row this[int index] {
                 get {
-                    return ((DataTable2Row)(this.Rows[index]));
+                    return ((DataTable3Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowChanging;
+            public event DataTable3RowChangeEventHandler DataTable3RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowChanged;
+            public event DataTable3RowChangeEventHandler DataTable3RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowDeleting;
+            public event DataTable3RowChangeEventHandler DataTable3RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event DataTable2RowChangeEventHandler DataTable2RowDeleted;
+            public event DataTable3RowChangeEventHandler DataTable3RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddDataTable2Row(DataTable2Row row) {
+            public void AddDataTable3Row(DataTable3Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2Row AddDataTable2Row(
+            public DataTable3Row AddDataTable3Row(
                         string NumberPP, 
                         string DisciplineName, 
                         string Speciality, 
@@ -810,20 +710,10 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         double Value1, 
                         double Value2, 
                         int OtherWork, 
-                        double Kalabin, 
-                        double Billig, 
-                        double Malkoff, 
-                        double Artemov, 
-                        double Kotlin, 
-                        double Prokhnych, 
-                        double Yugov, 
-                        double Vakansiya, 
-                        bool IsMultiEmployee, 
-                        double Value3, 
-                        double Value4, 
-                        double Value5, 
-                        string Agreement) {
-                DataTable2Row rowDataTable2Row = ((DataTable2Row)(this.NewRow()));
+                        string Agreement, 
+                        double SecretValue, 
+                        bool IsMultiEmployee) {
+                DataTable3Row rowDataTable3Row = ((DataTable3Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumberPP,
                         DisciplineName,
@@ -855,28 +745,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         Value1,
                         Value2,
                         OtherWork,
-                        Kalabin,
-                        Billig,
-                        Malkoff,
-                        Artemov,
-                        Kotlin,
-                        Prokhnych,
-                        Yugov,
-                        Vakansiya,
-                        IsMultiEmployee,
-                        Value3,
-                        Value4,
-                        Value5,
-                        Agreement};
-                rowDataTable2Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDataTable2Row);
-                return rowDataTable2Row;
+                        Agreement,
+                        SecretValue,
+                        IsMultiEmployee};
+                rowDataTable3Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDataTable3Row);
+                return rowDataTable3Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DataTable2DataTable cln = ((DataTable2DataTable)(base.Clone()));
+                DataTable3DataTable cln = ((DataTable3DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -884,7 +764,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DataTable2DataTable();
+                return new DataTable3DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -920,19 +800,9 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnValue1 = base.Columns["Value1"];
                 this.columnValue2 = base.Columns["Value2"];
                 this.columnOtherWork = base.Columns["OtherWork"];
-                this.columnKalabin = base.Columns["Kalabin"];
-                this.columnBillig = base.Columns["Billig"];
-                this.columnMalkoff = base.Columns["Malkoff"];
-                this.columnArtemov = base.Columns["Artemov"];
-                this.columnKotlin = base.Columns["Kotlin"];
-                this.columnProkhnych = base.Columns["Prokhnych"];
-                this.columnYugov = base.Columns["Yugov"];
-                this.columnVakansiya = base.Columns["Vakansiya"];
-                this.columnIsMultiEmployee = base.Columns["IsMultiEmployee"];
-                this.columnValue3 = base.Columns["Value3"];
-                this.columnValue4 = base.Columns["Value4"];
-                this.columnValue5 = base.Columns["Value5"];
                 this.columnAgreement = base.Columns["Agreement"];
+                this.columnSecretValue = base.Columns["SecretValue"];
+                this.columnIsMultiEmployee = base.Columns["IsMultiEmployee"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -998,58 +868,38 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnValue2);
                 this.columnOtherWork = new global::System.Data.DataColumn("OtherWork", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOtherWork);
-                this.columnKalabin = new global::System.Data.DataColumn("Kalabin", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKalabin);
-                this.columnBillig = new global::System.Data.DataColumn("Billig", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBillig);
-                this.columnMalkoff = new global::System.Data.DataColumn("Malkoff", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMalkoff);
-                this.columnArtemov = new global::System.Data.DataColumn("Artemov", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArtemov);
-                this.columnKotlin = new global::System.Data.DataColumn("Kotlin", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKotlin);
-                this.columnProkhnych = new global::System.Data.DataColumn("Prokhnych", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProkhnych);
-                this.columnYugov = new global::System.Data.DataColumn("Yugov", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnYugov);
-                this.columnVakansiya = new global::System.Data.DataColumn("Vakansiya", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVakansiya);
-                this.columnIsMultiEmployee = new global::System.Data.DataColumn("IsMultiEmployee", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIsMultiEmployee);
-                this.columnValue3 = new global::System.Data.DataColumn("Value3", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValue3);
-                this.columnValue4 = new global::System.Data.DataColumn("Value4", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValue4);
-                this.columnValue5 = new global::System.Data.DataColumn("Value5", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValue5);
                 this.columnAgreement = new global::System.Data.DataColumn("Agreement", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAgreement);
+                this.columnSecretValue = new global::System.Data.DataColumn("SecretValue", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSecretValue);
+                this.columnIsMultiEmployee = new global::System.Data.DataColumn("IsMultiEmployee", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsMultiEmployee);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2Row NewDataTable2Row() {
-                return ((DataTable2Row)(this.NewRow()));
+            public DataTable3Row NewDataTable3Row() {
+                return ((DataTable3Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DataTable2Row(builder);
+                return new DataTable3Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DataTable2Row);
+                return typeof(DataTable3Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DataTable2RowChanged != null)) {
-                    this.DataTable2RowChanged(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.DataTable3RowChanged != null)) {
+                    this.DataTable3RowChanged(this, new DataTable3RowChangeEvent(((DataTable3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1057,8 +907,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DataTable2RowChanging != null)) {
-                    this.DataTable2RowChanging(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.DataTable3RowChanging != null)) {
+                    this.DataTable3RowChanging(this, new DataTable3RowChangeEvent(((DataTable3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1066,8 +916,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DataTable2RowDeleted != null)) {
-                    this.DataTable2RowDeleted(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.DataTable3RowDeleted != null)) {
+                    this.DataTable3RowDeleted(this, new DataTable3RowChangeEvent(((DataTable3Row)(e.Row)), e.Action));
                 }
             }
             
@@ -1075,14 +925,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DataTable2RowDeleting != null)) {
-                    this.DataTable2RowDeleting(this, new DataTable2RowChangeEvent(((DataTable2Row)(e.Row)), e.Action));
+                if ((this.DataTable3RowDeleting != null)) {
+                    this.DataTable3RowDeleting(this, new DataTable3RowChangeEvent(((DataTable3Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveDataTable2Row(DataTable2Row row) {
+            public void RemoveDataTable3Row(DataTable3Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -1091,7 +941,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                WorkloadDataset ds = new WorkloadDataset();
+                WorkloadDatasetEmployee ds = new WorkloadDatasetEmployee();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1109,7 +959,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DataTable2DataTable";
+                attribute2.FixedValue = "DataTable3DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1153,15 +1003,15 @@ namespace CafedralReportingWPF.Reports.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DataTable2Row : global::System.Data.DataRow {
+        public partial class DataTable3Row : global::System.Data.DataRow {
             
-            private DataTable2DataTable tableDataTable2;
+            private DataTable3DataTable tableDataTable3;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal DataTable2Row(global::System.Data.DataRowBuilder rb) : 
+            internal DataTable3Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDataTable2 = ((DataTable2DataTable)(this.Table));
+                this.tableDataTable3 = ((DataTable3DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1169,14 +1019,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string NumberPP {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.NumberPPColumn]));
+                        return ((string)(this[this.tableDataTable3.NumberPPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NumberPP\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberPP\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.NumberPPColumn] = value;
+                    this[this.tableDataTable3.NumberPPColumn] = value;
                 }
             }
             
@@ -1185,14 +1035,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string DisciplineName {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.DisciplineNameColumn]));
+                        return ((string)(this[this.tableDataTable3.DisciplineNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DisciplineName\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DisciplineName\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.DisciplineNameColumn] = value;
+                    this[this.tableDataTable3.DisciplineNameColumn] = value;
                 }
             }
             
@@ -1201,14 +1051,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string Speciality {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.SpecialityColumn]));
+                        return ((string)(this[this.tableDataTable3.SpecialityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Speciality\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Speciality\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.SpecialityColumn] = value;
+                    this[this.tableDataTable3.SpecialityColumn] = value;
                 }
             }
             
@@ -1217,14 +1067,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string Faculty {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.FacultyColumn]));
+                        return ((string)(this[this.tableDataTable3.FacultyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Faculty\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Faculty\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.FacultyColumn] = value;
+                    this[this.tableDataTable3.FacultyColumn] = value;
                 }
             }
             
@@ -1233,14 +1083,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Semester {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.SemesterColumn]));
+                        return ((int)(this[this.tableDataTable3.SemesterColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Semester\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Semester\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.SemesterColumn] = value;
+                    this[this.tableDataTable3.SemesterColumn] = value;
                 }
             }
             
@@ -1249,14 +1099,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int CountOfStudents {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.CountOfStudentsColumn]));
+                        return ((int)(this[this.tableDataTable3.CountOfStudentsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CountOfStudents\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountOfStudents\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.CountOfStudentsColumn] = value;
+                    this[this.tableDataTable3.CountOfStudentsColumn] = value;
                 }
             }
             
@@ -1265,14 +1115,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int WeeksInSemester {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.WeeksInSemesterColumn]));
+                        return ((int)(this[this.tableDataTable3.WeeksInSemesterColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WeeksInSemester\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WeeksInSemester\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.WeeksInSemesterColumn] = value;
+                    this[this.tableDataTable3.WeeksInSemesterColumn] = value;
                 }
             }
             
@@ -1281,14 +1131,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int GroupsCount {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.GroupsCountColumn]));
+                        return ((int)(this[this.tableDataTable3.GroupsCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GroupsCount\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GroupsCount\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.GroupsCountColumn] = value;
+                    this[this.tableDataTable3.GroupsCountColumn] = value;
                 }
             }
             
@@ -1297,14 +1147,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int SubgroupsCount {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.SubgroupsCountColumn]));
+                        return ((int)(this[this.tableDataTable3.SubgroupsCountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SubgroupsCount\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubgroupsCount\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.SubgroupsCountColumn] = value;
+                    this[this.tableDataTable3.SubgroupsCountColumn] = value;
                 }
             }
             
@@ -1313,14 +1163,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Lections {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.LectionsColumn]));
+                        return ((int)(this[this.tableDataTable3.LectionsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Lections\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Lections\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.LectionsColumn] = value;
+                    this[this.tableDataTable3.LectionsColumn] = value;
                 }
             }
             
@@ -1329,14 +1179,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Practicies {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.PracticiesColumn]));
+                        return ((int)(this[this.tableDataTable3.PracticiesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Practicies\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Practicies\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.PracticiesColumn] = value;
+                    this[this.tableDataTable3.PracticiesColumn] = value;
                 }
             }
             
@@ -1345,14 +1195,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Labs {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.LabsColumn]));
+                        return ((int)(this[this.tableDataTable3.LabsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Labs\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Labs\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.LabsColumn] = value;
+                    this[this.tableDataTable3.LabsColumn] = value;
                 }
             }
             
@@ -1361,14 +1211,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Examen {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.ExamenColumn]));
+                        return ((int)(this[this.tableDataTable3.ExamenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Examen\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Examen\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.ExamenColumn] = value;
+                    this[this.tableDataTable3.ExamenColumn] = value;
                 }
             }
             
@@ -1377,14 +1227,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int Zachet {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.ZachetColumn]));
+                        return ((int)(this[this.tableDataTable3.ZachetColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Zachet\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Zachet\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.ZachetColumn] = value;
+                    this[this.tableDataTable3.ZachetColumn] = value;
                 }
             }
             
@@ -1393,14 +1243,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int RGR {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.RGRColumn]));
+                        return ((int)(this[this.tableDataTable3.RGRColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RGR\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RGR\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.RGRColumn] = value;
+                    this[this.tableDataTable3.RGRColumn] = value;
                 }
             }
             
@@ -1409,14 +1259,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int KR {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.KRColumn]));
+                        return ((int)(this[this.tableDataTable3.KRColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KR\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'KR\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.KRColumn] = value;
+                    this[this.tableDataTable3.KRColumn] = value;
                 }
             }
             
@@ -1425,14 +1275,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int KP {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.KPColumn]));
+                        return ((int)(this[this.tableDataTable3.KPColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KP\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'KP\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.KPColumn] = value;
+                    this[this.tableDataTable3.KPColumn] = value;
                 }
             }
             
@@ -1441,14 +1291,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int LearnPracticies {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.LearnPracticiesColumn]));
+                        return ((int)(this[this.tableDataTable3.LearnPracticiesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LearnPracticies\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LearnPracticies\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.LearnPracticiesColumn] = value;
+                    this[this.tableDataTable3.LearnPracticiesColumn] = value;
                 }
             }
             
@@ -1457,14 +1307,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int WorkPracticies {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.WorkPracticiesColumn]));
+                        return ((int)(this[this.tableDataTable3.WorkPracticiesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WorkPracticies\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WorkPracticies\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.WorkPracticiesColumn] = value;
+                    this[this.tableDataTable3.WorkPracticiesColumn] = value;
                 }
             }
             
@@ -1473,14 +1323,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int DiplomaPracticies {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.DiplomaPracticiesColumn]));
+                        return ((int)(this[this.tableDataTable3.DiplomaPracticiesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DiplomaPracticies\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DiplomaPracticies\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.DiplomaPracticiesColumn] = value;
+                    this[this.tableDataTable3.DiplomaPracticiesColumn] = value;
                 }
             }
             
@@ -1489,14 +1339,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int GEK {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.GEKColumn]));
+                        return ((int)(this[this.tableDataTable3.GEKColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GEK\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GEK\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.GEKColumn] = value;
+                    this[this.tableDataTable3.GEKColumn] = value;
                 }
             }
             
@@ -1505,14 +1355,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int GAK {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.GAKColumn]));
+                        return ((int)(this[this.tableDataTable3.GAKColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GAK\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GAK\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.GAKColumn] = value;
+                    this[this.tableDataTable3.GAKColumn] = value;
                 }
             }
             
@@ -1521,14 +1371,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int GAKPred {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.GAKPredColumn]));
+                        return ((int)(this[this.tableDataTable3.GAKPredColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'GAKPred\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GAKPred\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.GAKPredColumn] = value;
+                    this[this.tableDataTable3.GAKPredColumn] = value;
                 }
             }
             
@@ -1537,14 +1387,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int DPRuk {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.DPRukColumn]));
+                        return ((int)(this[this.tableDataTable3.DPRukColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DPRuk\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DPRuk\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.DPRukColumn] = value;
+                    this[this.tableDataTable3.DPRukColumn] = value;
                 }
             }
             
@@ -1553,14 +1403,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string Assignee {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.AssigneeColumn]));
+                        return ((string)(this[this.tableDataTable3.AssigneeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Assignee\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Assignee\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.AssigneeColumn] = value;
+                    this[this.tableDataTable3.AssigneeColumn] = value;
                 }
             }
             
@@ -1569,14 +1419,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string StudyYear {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.StudyYearColumn]));
+                        return ((string)(this[this.tableDataTable3.StudyYearColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StudyYear\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'StudyYear\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.StudyYearColumn] = value;
+                    this[this.tableDataTable3.StudyYearColumn] = value;
                 }
             }
             
@@ -1585,14 +1435,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int CafRuk {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.CafRukColumn]));
+                        return ((int)(this[this.tableDataTable3.CafRukColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CafRuk\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CafRuk\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.CafRukColumn] = value;
+                    this[this.tableDataTable3.CafRukColumn] = value;
                 }
             }
             
@@ -1601,14 +1451,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public double Value1 {
                 get {
                     try {
-                        return ((double)(this[this.tableDataTable2.Value1Column]));
+                        return ((double)(this[this.tableDataTable3.Value1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Value1\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Value1\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.Value1Column] = value;
+                    this[this.tableDataTable3.Value1Column] = value;
                 }
             }
             
@@ -1617,14 +1467,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public double Value2 {
                 get {
                     try {
-                        return ((double)(this[this.tableDataTable2.Value2Column]));
+                        return ((double)(this[this.tableDataTable3.Value2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Value2\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Value2\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.Value2Column] = value;
+                    this[this.tableDataTable3.Value2Column] = value;
                 }
             }
             
@@ -1633,206 +1483,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public int OtherWork {
                 get {
                     try {
-                        return ((int)(this[this.tableDataTable2.OtherWorkColumn]));
+                        return ((int)(this[this.tableDataTable3.OtherWorkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OtherWork\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'OtherWork\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.OtherWorkColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Kalabin {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.KalabinColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Kalabin\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.KalabinColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Billig {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.BilligColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Billig\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.BilligColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Malkoff {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.MalkoffColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Malkoff\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.MalkoffColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Artemov {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.ArtemovColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Artemov\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.ArtemovColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Kotlin {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.KotlinColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Kotlin\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.KotlinColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Prokhnych {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.ProkhnychColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Prokhnych\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.ProkhnychColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Yugov {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.YugovColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Yugov\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.YugovColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Vakansiya {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.VakansiyaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vakansiya\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.VakansiyaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMultiEmployee {
-                get {
-                    try {
-                        return ((bool)(this[this.tableDataTable2.IsMultiEmployeeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsMultiEmployee\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.IsMultiEmployeeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Value3 {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.Value3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Value3\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.Value3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Value4 {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.Value4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Value4\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.Value4Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double Value5 {
-                get {
-                    try {
-                        return ((double)(this[this.tableDataTable2.Value5Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Value5\' in table \'DataTable2\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable2.Value5Column] = value;
+                    this[this.tableDataTable3.OtherWorkColumn] = value;
                 }
             }
             
@@ -1841,531 +1499,443 @@ namespace CafedralReportingWPF.Reports.Datasets {
             public string Agreement {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable2.AgreementColumn]));
+                        return ((string)(this[this.tableDataTable3.AgreementColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Agreement\' in table \'DataTable2\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Agreement\' in table \'DataTable3\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable2.AgreementColumn] = value;
+                    this[this.tableDataTable3.AgreementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double SecretValue {
+                get {
+                    try {
+                        return ((double)(this[this.tableDataTable3.SecretValueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SecretValue\' in table \'DataTable3\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable3.SecretValueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsMultiEmployee {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDataTable3.IsMultiEmployeeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsMultiEmployee\' in table \'DataTable3\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable3.IsMultiEmployeeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNumberPPNull() {
-                return this.IsNull(this.tableDataTable2.NumberPPColumn);
+                return this.IsNull(this.tableDataTable3.NumberPPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNumberPPNull() {
-                this[this.tableDataTable2.NumberPPColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.NumberPPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDisciplineNameNull() {
-                return this.IsNull(this.tableDataTable2.DisciplineNameColumn);
+                return this.IsNull(this.tableDataTable3.DisciplineNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDisciplineNameNull() {
-                this[this.tableDataTable2.DisciplineNameColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.DisciplineNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSpecialityNull() {
-                return this.IsNull(this.tableDataTable2.SpecialityColumn);
+                return this.IsNull(this.tableDataTable3.SpecialityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSpecialityNull() {
-                this[this.tableDataTable2.SpecialityColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.SpecialityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsFacultyNull() {
-                return this.IsNull(this.tableDataTable2.FacultyColumn);
+                return this.IsNull(this.tableDataTable3.FacultyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFacultyNull() {
-                this[this.tableDataTable2.FacultyColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.FacultyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSemesterNull() {
-                return this.IsNull(this.tableDataTable2.SemesterColumn);
+                return this.IsNull(this.tableDataTable3.SemesterColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSemesterNull() {
-                this[this.tableDataTable2.SemesterColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.SemesterColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCountOfStudentsNull() {
-                return this.IsNull(this.tableDataTable2.CountOfStudentsColumn);
+                return this.IsNull(this.tableDataTable3.CountOfStudentsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCountOfStudentsNull() {
-                this[this.tableDataTable2.CountOfStudentsColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.CountOfStudentsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsWeeksInSemesterNull() {
-                return this.IsNull(this.tableDataTable2.WeeksInSemesterColumn);
+                return this.IsNull(this.tableDataTable3.WeeksInSemesterColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetWeeksInSemesterNull() {
-                this[this.tableDataTable2.WeeksInSemesterColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.WeeksInSemesterColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGroupsCountNull() {
-                return this.IsNull(this.tableDataTable2.GroupsCountColumn);
+                return this.IsNull(this.tableDataTable3.GroupsCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGroupsCountNull() {
-                this[this.tableDataTable2.GroupsCountColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.GroupsCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSubgroupsCountNull() {
-                return this.IsNull(this.tableDataTable2.SubgroupsCountColumn);
+                return this.IsNull(this.tableDataTable3.SubgroupsCountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSubgroupsCountNull() {
-                this[this.tableDataTable2.SubgroupsCountColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.SubgroupsCountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLectionsNull() {
-                return this.IsNull(this.tableDataTable2.LectionsColumn);
+                return this.IsNull(this.tableDataTable3.LectionsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLectionsNull() {
-                this[this.tableDataTable2.LectionsColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.LectionsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPracticiesNull() {
-                return this.IsNull(this.tableDataTable2.PracticiesColumn);
+                return this.IsNull(this.tableDataTable3.PracticiesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPracticiesNull() {
-                this[this.tableDataTable2.PracticiesColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.PracticiesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLabsNull() {
-                return this.IsNull(this.tableDataTable2.LabsColumn);
+                return this.IsNull(this.tableDataTable3.LabsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLabsNull() {
-                this[this.tableDataTable2.LabsColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.LabsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsExamenNull() {
-                return this.IsNull(this.tableDataTable2.ExamenColumn);
+                return this.IsNull(this.tableDataTable3.ExamenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetExamenNull() {
-                this[this.tableDataTable2.ExamenColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.ExamenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsZachetNull() {
-                return this.IsNull(this.tableDataTable2.ZachetColumn);
+                return this.IsNull(this.tableDataTable3.ZachetColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetZachetNull() {
-                this[this.tableDataTable2.ZachetColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.ZachetColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsRGRNull() {
-                return this.IsNull(this.tableDataTable2.RGRColumn);
+                return this.IsNull(this.tableDataTable3.RGRColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetRGRNull() {
-                this[this.tableDataTable2.RGRColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.RGRColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsKRNull() {
-                return this.IsNull(this.tableDataTable2.KRColumn);
+                return this.IsNull(this.tableDataTable3.KRColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetKRNull() {
-                this[this.tableDataTable2.KRColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.KRColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsKPNull() {
-                return this.IsNull(this.tableDataTable2.KPColumn);
+                return this.IsNull(this.tableDataTable3.KPColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetKPNull() {
-                this[this.tableDataTable2.KPColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.KPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLearnPracticiesNull() {
-                return this.IsNull(this.tableDataTable2.LearnPracticiesColumn);
+                return this.IsNull(this.tableDataTable3.LearnPracticiesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLearnPracticiesNull() {
-                this[this.tableDataTable2.LearnPracticiesColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.LearnPracticiesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsWorkPracticiesNull() {
-                return this.IsNull(this.tableDataTable2.WorkPracticiesColumn);
+                return this.IsNull(this.tableDataTable3.WorkPracticiesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetWorkPracticiesNull() {
-                this[this.tableDataTable2.WorkPracticiesColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.WorkPracticiesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDiplomaPracticiesNull() {
-                return this.IsNull(this.tableDataTable2.DiplomaPracticiesColumn);
+                return this.IsNull(this.tableDataTable3.DiplomaPracticiesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDiplomaPracticiesNull() {
-                this[this.tableDataTable2.DiplomaPracticiesColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.DiplomaPracticiesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGEKNull() {
-                return this.IsNull(this.tableDataTable2.GEKColumn);
+                return this.IsNull(this.tableDataTable3.GEKColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGEKNull() {
-                this[this.tableDataTable2.GEKColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.GEKColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGAKNull() {
-                return this.IsNull(this.tableDataTable2.GAKColumn);
+                return this.IsNull(this.tableDataTable3.GAKColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGAKNull() {
-                this[this.tableDataTable2.GAKColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.GAKColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGAKPredNull() {
-                return this.IsNull(this.tableDataTable2.GAKPredColumn);
+                return this.IsNull(this.tableDataTable3.GAKPredColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetGAKPredNull() {
-                this[this.tableDataTable2.GAKPredColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.GAKPredColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDPRukNull() {
-                return this.IsNull(this.tableDataTable2.DPRukColumn);
+                return this.IsNull(this.tableDataTable3.DPRukColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDPRukNull() {
-                this[this.tableDataTable2.DPRukColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.DPRukColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAssigneeNull() {
-                return this.IsNull(this.tableDataTable2.AssigneeColumn);
+                return this.IsNull(this.tableDataTable3.AssigneeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAssigneeNull() {
-                this[this.tableDataTable2.AssigneeColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.AssigneeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsStudyYearNull() {
-                return this.IsNull(this.tableDataTable2.StudyYearColumn);
+                return this.IsNull(this.tableDataTable3.StudyYearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStudyYearNull() {
-                this[this.tableDataTable2.StudyYearColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.StudyYearColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCafRukNull() {
-                return this.IsNull(this.tableDataTable2.CafRukColumn);
+                return this.IsNull(this.tableDataTable3.CafRukColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCafRukNull() {
-                this[this.tableDataTable2.CafRukColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.CafRukColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsValue1Null() {
-                return this.IsNull(this.tableDataTable2.Value1Column);
+                return this.IsNull(this.tableDataTable3.Value1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetValue1Null() {
-                this[this.tableDataTable2.Value1Column] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.Value1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsValue2Null() {
-                return this.IsNull(this.tableDataTable2.Value2Column);
+                return this.IsNull(this.tableDataTable3.Value2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetValue2Null() {
-                this[this.tableDataTable2.Value2Column] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.Value2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsOtherWorkNull() {
-                return this.IsNull(this.tableDataTable2.OtherWorkColumn);
+                return this.IsNull(this.tableDataTable3.OtherWorkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetOtherWorkNull() {
-                this[this.tableDataTable2.OtherWorkColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsKalabinNull() {
-                return this.IsNull(this.tableDataTable2.KalabinColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetKalabinNull() {
-                this[this.tableDataTable2.KalabinColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBilligNull() {
-                return this.IsNull(this.tableDataTable2.BilligColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBilligNull() {
-                this[this.tableDataTable2.BilligColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsMalkoffNull() {
-                return this.IsNull(this.tableDataTable2.MalkoffColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetMalkoffNull() {
-                this[this.tableDataTable2.MalkoffColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsArtemovNull() {
-                return this.IsNull(this.tableDataTable2.ArtemovColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetArtemovNull() {
-                this[this.tableDataTable2.ArtemovColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsKotlinNull() {
-                return this.IsNull(this.tableDataTable2.KotlinColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetKotlinNull() {
-                this[this.tableDataTable2.KotlinColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsProkhnychNull() {
-                return this.IsNull(this.tableDataTable2.ProkhnychColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetProkhnychNull() {
-                this[this.tableDataTable2.ProkhnychColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsYugovNull() {
-                return this.IsNull(this.tableDataTable2.YugovColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetYugovNull() {
-                this[this.tableDataTable2.YugovColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsVakansiyaNull() {
-                return this.IsNull(this.tableDataTable2.VakansiyaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetVakansiyaNull() {
-                this[this.tableDataTable2.VakansiyaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIsMultiEmployeeNull() {
-                return this.IsNull(this.tableDataTable2.IsMultiEmployeeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIsMultiEmployeeNull() {
-                this[this.tableDataTable2.IsMultiEmployeeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsValue3Null() {
-                return this.IsNull(this.tableDataTable2.Value3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetValue3Null() {
-                this[this.tableDataTable2.Value3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsValue4Null() {
-                return this.IsNull(this.tableDataTable2.Value4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetValue4Null() {
-                this[this.tableDataTable2.Value4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsValue5Null() {
-                return this.IsNull(this.tableDataTable2.Value5Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetValue5Null() {
-                this[this.tableDataTable2.Value5Column] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.OtherWorkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAgreementNull() {
-                return this.IsNull(this.tableDataTable2.AgreementColumn);
+                return this.IsNull(this.tableDataTable3.AgreementColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAgreementNull() {
-                this[this.tableDataTable2.AgreementColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable3.AgreementColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSecretValueNull() {
+                return this.IsNull(this.tableDataTable3.SecretValueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSecretValueNull() {
+                this[this.tableDataTable3.SecretValueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIsMultiEmployeeNull() {
+                return this.IsNull(this.tableDataTable3.IsMultiEmployeeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIsMultiEmployeeNull() {
+                this[this.tableDataTable3.IsMultiEmployeeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2373,22 +1943,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class DataTable2RowChangeEvent : global::System.EventArgs {
+        public class DataTable3RowChangeEvent : global::System.EventArgs {
             
-            private DataTable2Row eventRow;
+            private DataTable3Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2RowChangeEvent(DataTable2Row row, global::System.Data.DataRowAction action) {
+            public DataTable3RowChangeEvent(DataTable3Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable2Row Row {
+            public DataTable3Row Row {
                 get {
                     return this.eventRow;
                 }
