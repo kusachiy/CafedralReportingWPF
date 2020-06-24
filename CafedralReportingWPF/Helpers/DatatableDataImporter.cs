@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using static CafedralReportingWPF.Reports.Datasets.Contract;
+using static CafedralReportingWPF.Reports.Datasets.IndPlan;
+
 using static CafedralReportingWPF.Reports.Datasets.SemesterDataset;
 using static CafedralReportingWPF.Reports.Datasets.WorkloadDataset;
 using static CafedralReportingWPF.Reports.Datasets.WorkloadDatasetEmployee;
@@ -113,7 +115,7 @@ namespace CafedralReportingWPF.Helpers
                 datatable.AddDataTable4Row(w.Employee.FullName,w.Semester.CountOfWeeks * w.Lectures,w.Semester.CountOfWeeks*w.Practices,w.Semester.CountOfWeeks*2*w.Group.CountOfSubgroups,
                     GetInt(w.KR)*w.Group.CountOfStudents*2, GetInt(w.KP) * w.Group.CountOfStudents * 3,0,0,
                     0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen),GetInt(w.Zachet)*w.Group.CountOfStudents*0.25,
-                    GetInt(w.Examen)*0.33*w.Group.CountOfStudents,0,0,0,w.Discipline.DisciplineName,w.Group.Name,0);
+                    GetInt(w.Examen)*0.33*w.Group.CountOfStudents,0,0,0,w.Discipline.DisciplineName,w.Group?.Name??"-",0);
             }
             foreach (var w in statics)
             {
@@ -128,6 +130,40 @@ namespace CafedralReportingWPF.Helpers
                     (lowerD == "диссертация бакалавры" || lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак"? 0: w.Value1)
                     
                     ) ;
+            }
+        }
+
+        public static void FillIndPlanDataset(DataTable5DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics, Employee employee)
+        {
+            foreach (var w in workflows)
+            {
+                datatable.AddDataTable5Row(w.Employee.FullName, w.Semester.CountOfWeeks * w.Lectures, w.Semester.CountOfWeeks * w.Practices, w.Semester.CountOfWeeks * 2 * w.Group.CountOfSubgroups,
+                    GetInt(w.KR) * w.Group.CountOfStudents * 2, GetInt(w.KP) * w.Group.CountOfStudents * 3, 0, 0,
+                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen), GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25,
+                    GetInt(w.Examen) * 0.33 * w.Group.CountOfStudents,  0, 0, w.Discipline.DisciplineName, w.Group?.FullName ?? "-", w.WorkflowYear?.FullYearName,0,0,0,0,0,0,w.Group?.CountOfStudents??0,
+
+                    w.Semester.CountOfWeeks * w.Lectures + w.Semester.CountOfWeeks * w.Practices + w.Semester.CountOfWeeks * 2 * w.Group.CountOfSubgroups+
+                    GetInt(w.KR) * w.Group.CountOfStudents * 2 + GetInt(w.KP) * w.Group.CountOfStudents * 3 +
+                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen)+ GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25
+                    );
+            }
+            foreach (var w in statics)
+            {
+                var lowerD = w.DisciplineName.ToLower();
+
+                datatable.AddDataTable5Row(employee.FullName, 0, 0,
+                    0, 0, 0, 0, 0, 0,0,0,
+                    (lowerD == "государственный экзамен бакалавров" ? w.GetValueByEmployeeId(employee.Id) : 0),
+                    (lowerD == "работа гак" ? w.GetValueByEmployeeId(employee.Id) : 0),
+                    w.DisciplineName,w.Group?.FullName,  w.AcademicYear?.FullYearName,
+                    (lowerD == "диссертация бакалавры" || lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак" ? 0 : w.Value1)
+                    ,0
+                    ,0
+                    ,0, 0,(lowerD == "диссертация бакалавры" ? w.Value1 : 0),w.Group?.CountOfStudents??0
+                    , (lowerD == "государственный экзамен бакалавров" ? w.GetValueByEmployeeId(employee.Id) : 0) 
+                    + (lowerD == "работа гак" ? w.GetValueByEmployeeId(employee.Id) : 0)
+                    + (lowerD == "диссертация бакалавры" || lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак" ? 0 : w.Value1)
+                    );
             }
         }
 

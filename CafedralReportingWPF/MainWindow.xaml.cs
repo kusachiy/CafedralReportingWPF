@@ -20,6 +20,7 @@ namespace CafedralReportingWPF
         SemesterReportPage _semReportPage;
         WorkloadReportPage _workloadReportPage;
         ContractReportPage _contractReportPage;
+        IndPlanReportPage _indPlanReportPage;
 
         public MainWindow()
         {
@@ -30,6 +31,8 @@ namespace CafedralReportingWPF
             _disciplineConfigPage = new DisciplineAssignConfigWindow();
             _workloadReportPage = new WorkloadReportPage();
             _contractReportPage = new ContractReportPage();
+            _indPlanReportPage = new IndPlanReportPage();
+
             _currentPage = _workflowControl;
         }   
 
@@ -111,6 +114,11 @@ namespace CafedralReportingWPF
         private void Click_Contract_Report(object sender, RoutedEventArgs e)
         {
             SetFrameContent(_contractReportPage);
+        }
+
+        private void Click_IndPlan_Report(object sender, RoutedEventArgs e)
+        {
+            SetFrameContent(_indPlanReportPage);
         }
     }
 }

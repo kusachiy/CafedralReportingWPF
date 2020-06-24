@@ -145,6 +145,14 @@
     <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />
     <Compile Include="Models\StaticWorkflow.cs" />
+    <Compile Include="Reports\Datasets\IndPlan.cs">
+      <DependentUpon>IndPlan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Datasets\IndPlan.Designer.cs">
+      <DependentUpon>IndPlan.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\Datasets\Contract.cs">
       <DependentUpon>Contract.xsd</DependentUpon>
     </Compile>
@@ -176,6 +184,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkloadDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndPlanReportPage.xaml.cs">
+      <DependentUpon>IndPlanReportPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\DisciplineBlacklistConfigWindow.xaml.cs">
       <DependentUpon>DisciplineBlacklistConfigWindow.xaml</DependentUpon>
@@ -216,6 +227,10 @@
     <Compile Include="Views\WorkflowPage.xaml.cs">
       <DependentUpon>WorkflowPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\IndPlanReportPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Dialogs\DisciplineBlacklistConfigWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -321,6 +336,9 @@
     <EmbeddedResource Include="Reports\Controls\Contract.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Controls\PersonalPlan.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Controls\Workload.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -331,12 +349,23 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Data\workflow.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Datasets\IndPlan.xsc">
+      <DependentUpon>IndPlan.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Datasets\IndPlan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IndPlan.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\Datasets\IndPlan.xss">
+      <DependentUpon>IndPlan.xsd</DependentUpon>
     </None>
     <None Include="Reports\Datasets\Contract.xsc">
       <DependentUpon>Contract.xsd</DependentUpon>
