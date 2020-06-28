@@ -33,6 +33,7 @@ namespace CafedralReportingWPF.Views
             reportDataSource1.Value = dataset.DataTable5;
             _reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             _reportViewer.LocalReport.ReportPath = @"./Reports/Controls/PersonalPlan.rdlc";
+            _reportViewer.LocalReport.DisplayName = "Индивидуальный план " + employee.FullName + " (" + yearModel.Name.Replace('/','-') +")";
             dataset.EndInit();
             
             var context = DbContextSingleton.GetContext();

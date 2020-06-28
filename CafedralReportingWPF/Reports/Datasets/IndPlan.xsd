@@ -12,7 +12,7 @@
   <xs:element name="IndPlan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="IndPlan" msprop:Generator_UserDSName="IndPlan">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable5" msprop:Generator_TableClassName="DataTable5DataTable" msprop:Generator_TableVarName="tableDataTable5" msprop:Generator_RowChangedName="DataTable5RowChanged" msprop:Generator_TablePropName="DataTable5" msprop:Generator_RowDeletingName="DataTable5RowDeleting" msprop:Generator_RowChangingName="DataTable5RowChanging" msprop:Generator_RowEvHandlerName="DataTable5RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable5RowDeleted" msprop:Generator_RowClassName="DataTable5Row" msprop:Generator_UserTableName="DataTable5" msprop:Generator_RowEvArgName="DataTable5RowChangeEvent">
+        <xs:element name="DataTable5" msprop:Generator_TableClassName="DataTable5DataTable" msprop:Generator_TableVarName="tableDataTable5" msprop:Generator_TablePropName="DataTable5" msprop:Generator_RowDeletingName="DataTable5RowDeleting" msprop:Generator_RowChangingName="DataTable5RowChanging" msprop:Generator_RowEvHandlerName="DataTable5RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable5RowDeleted" msprop:Generator_UserTableName="DataTable5" msprop:Generator_RowChangedName="DataTable5RowChanged" msprop:Generator_RowEvArgName="DataTable5RowChangeEvent" msprop:Generator_RowClassName="DataTable5Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Assignee" msprop:Generator_ColumnVarNameInTable="columnAssignee" msprop:Generator_ColumnPropNameInRow="Assignee" msprop:Generator_ColumnPropNameInTable="AssigneeColumn" msprop:Generator_UserColumnName="Assignee" type="xs:string" minOccurs="0" />
@@ -39,6 +39,7 @@
               <xs:element name="Other" msprop:Generator_ColumnVarNameInTable="columnOther" msprop:Generator_ColumnPropNameInRow="Other" msprop:Generator_ColumnPropNameInTable="OtherColumn" msprop:Generator_UserColumnName="Other" type="xs:double" minOccurs="0" />
               <xs:element name="CountOfStudents" msprop:Generator_ColumnVarNameInTable="columnCountOfStudents" msprop:Generator_ColumnPropNameInRow="CountOfStudents" msprop:Generator_ColumnPropNameInTable="CountOfStudentsColumn" msprop:Generator_UserColumnName="CountOfStudents" type="xs:int" minOccurs="0" />
               <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+              <xs:element name="IsAutumnSemester" msprop:Generator_ColumnVarNameInTable="columnIsAutumnSemester" msprop:Generator_ColumnPropNameInRow="IsAutumnSemester" msprop:Generator_ColumnPropNameInTable="IsAutumnSemesterColumn" msprop:Generator_UserColumnName="IsAutumnSemester" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

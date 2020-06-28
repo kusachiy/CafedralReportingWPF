@@ -327,6 +327,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnTotal;
             
+            private global::System.Data.DataColumn columnIsAutumnSemester;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable5DataTable() {
@@ -554,6 +556,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IsAutumnSemesterColumn {
+                get {
+                    return this.columnIsAutumnSemester;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -613,7 +623,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         double Aspirant, 
                         double Other, 
                         int CountOfStudents, 
-                        double Total) {
+                        double Total, 
+                        int IsAutumnSemester) {
                 DataTable5Row rowDataTable5Row = ((DataTable5Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Assignee,
@@ -639,7 +650,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         Aspirant,
                         Other,
                         CountOfStudents,
-                        Total};
+                        Total,
+                        IsAutumnSemester};
                 rowDataTable5Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable5Row);
                 return rowDataTable5Row;
@@ -686,6 +698,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnOther = base.Columns["Other"];
                 this.columnCountOfStudents = base.Columns["CountOfStudents"];
                 this.columnTotal = base.Columns["Total"];
+                this.columnIsAutumnSemester = base.Columns["IsAutumnSemester"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -739,6 +752,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnCountOfStudents);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.columnIsAutumnSemester = new global::System.Data.DataColumn("IsAutumnSemester", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsAutumnSemester);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1265,6 +1280,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IsAutumnSemester {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable5.IsAutumnSemesterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsAutumnSemester\' in table \'DataTable5\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable5.IsAutumnSemesterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsAssigneeNull() {
                 return this.IsNull(this.tableDataTable5.AssigneeColumn);
             }
@@ -1549,6 +1580,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableDataTable5.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIsAutumnSemesterNull() {
+                return this.IsNull(this.tableDataTable5.IsAutumnSemesterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIsAutumnSemesterNull() {
+                this[this.tableDataTable5.IsAutumnSemesterColumn] = global::System.Convert.DBNull;
             }
         }
         

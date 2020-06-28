@@ -144,7 +144,8 @@ namespace CafedralReportingWPF.Helpers
 
                     w.Semester.CountOfWeeks * w.Lectures + w.Semester.CountOfWeeks * w.Practices + w.Semester.CountOfWeeks * 2 * w.Group.CountOfSubgroups+
                     GetInt(w.KR) * w.Group.CountOfStudents * 2 + GetInt(w.KP) * w.Group.CountOfStudents * 3 +
-                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen)+ GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25
+                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen)+ GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25,
+                    GetInt(w.Semester.IsAutumn)
                     );
             }
             foreach (var w in statics)
@@ -163,6 +164,7 @@ namespace CafedralReportingWPF.Helpers
                     , (lowerD == "государственный экзамен бакалавров" ? w.GetValueByEmployeeId(employee.Id) : 0) 
                     + (lowerD == "работа гак" ? w.GetValueByEmployeeId(employee.Id) : 0)
                     + (lowerD == "диссертация бакалавры" || lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак" ? 0 : w.Value1)
+                    ,GetInt(w.Semester.IsAutumn)
                     );
             }
         }
