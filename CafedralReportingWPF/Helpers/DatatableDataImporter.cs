@@ -16,17 +16,39 @@ namespace CafedralReportingWPF.Helpers
         {
             foreach (var w in workflows)
             {
-                datatable.AddDataTable1Row(w.Group.FullName, w.Discipline.DisciplineName, w.Lectures,w.Practices,w.Labs,w.Group.CountOfStudents,GetInt(w.KR),GetInt(w.KP),GetInt(w.Examen),GetInt(w.Zachet)
-                    ,ConcatanateEmployees(w)
-                    ,w.Semester.CountOfWeeks,w.Agreement?.Description,w.Semester.SemesterNumber.ToString(),w.WorkflowYear.FullYearName,w.Group.CountOfSubgroups);
+                if (w.Discipline.DisciplineName == "Web-программирование")
+                {
+                }
+
+                datatable.AddDataTable1Row(w.Group.FullName, w.Discipline.DisciplineName,w.Semester.CountOfWeeks
+                    ,w.Agreement?.Description,w.Semester.SemesterNumber,w.WorkflowYear.FullYearName
+
+                    ,w.Semester.CountOfWeeks * w.Lectures + w.Semester.CountOfWeeks * w.Practices + w.Semester.CountOfWeeks * w.Labs * w.Group.CountOfSubgroups +
+                    GetInt(w.KR) * w.Group.CountOfStudents * 2 + GetInt(w.KP) * w.Group.CountOfStudents * 3 +
+                    0.33 * GetInt(w.Examen) * w.Group.CountOfStudents + GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25 +
+                    0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen)
+
+                    , w.Group.EntryYear
+                    , w.Lectures
+                    ,w.Group.CountOfStudents);
 
             }
-            foreach (var s in statics)
+            foreach (var w in statics)
             {
-                datatable.AddDataTable1Row(s.Group.FullName, s.DisciplineName, 0, (s.DisciplineName.Contains("практика") ? (int)s.Value1 : 0),
-                    0, s.Group.CountOfStudents,0, 0, 0, GetInt(s.Zachet)
-                    , ConcatanateEmployees(s)
-                    , s.Semester.CountOfWeeks, s.Agreement?.Description, s.Semester.SemesterNumber.ToString(), s.AcademicYear.FullYearName, 1);
+                var lowerD = w.DisciplineName.ToLower();
+
+                datatable.AddDataTable1Row(w.Group.FullName, w.DisciplineName,w.Semester.CountOfWeeks,
+                    w.Agreement?.Description, w.Semester.SemesterNumber, w.AcademicYear.FullYearName
+
+                    ,(lowerD == "государственный экзамен бакалавров"|| lowerD == "работа гак" ? w.SumValues : 0)    
+                    + (lowerD.EndsWith(" практика")||lowerD == "руководство аспирантами"?w.Value1*w.Value2:0)
+                    + (/*lowerD == "диссертация бакалавры" || */ lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак"
+                    || lowerD.EndsWith(" практика") || lowerD == "руководство аспирантами" ? 0 : w.Value1)
+
+                    , w.Group.EntryYear
+                    ,0
+                    , w.Group.CountOfStudents
+                    );
             }
         }
         public static void FillWorkloadDataset(DataTable2DataTable datatable, List<Workflow> workflows, List<ExtendedStaticWorkflow> statics)
@@ -137,13 +159,14 @@ namespace CafedralReportingWPF.Helpers
         {
             foreach (var w in workflows)
             {
-                datatable.AddDataTable5Row(w.Employee.FullName, w.Semester.CountOfWeeks * w.Lectures, w.Semester.CountOfWeeks * w.Practices, w.Semester.CountOfWeeks * 2 * w.Group.CountOfSubgroups,
+                datatable.AddDataTable5Row(w.Employee.FullName, w.Semester.CountOfWeeks * w.Lectures, w.Semester.CountOfWeeks * w.Practices, w.Semester.CountOfWeeks * w.Labs * w.Group.CountOfSubgroups,
                     GetInt(w.KR) * w.Group.CountOfStudents * 2, GetInt(w.KP) * w.Group.CountOfStudents * 3, 0, 0,
                     0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen), GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25,
                     GetInt(w.Examen) * 0.33 * w.Group.CountOfStudents,  0, 0, w.Discipline.DisciplineName, w.Group?.FullName ?? "-", w.WorkflowYear?.FullYearName,0,0,0,0,0,0,w.Group?.CountOfStudents??0,
 
                     w.Semester.CountOfWeeks * w.Lectures + w.Semester.CountOfWeeks * w.Practices + w.Semester.CountOfWeeks * 2 * w.Group.CountOfSubgroups+
                     GetInt(w.KR) * w.Group.CountOfStudents * 2 + GetInt(w.KP) * w.Group.CountOfStudents * 3 +
+                     0.33 * GetInt(w.Examen) * w.Group.CountOfStudents +
                     0.05 * w.Lectures * w.Semester.CountOfWeeks + 2 * 1 * GetInt(w.Examen)+ GetInt(w.Zachet) * w.Group.CountOfStudents * 0.25,
                     GetInt(w.Semester.IsAutumn)
                     );
@@ -163,7 +186,7 @@ namespace CafedralReportingWPF.Helpers
                     ,0, 0,(lowerD == "диссертация бакалавры" ? w.Value1 : 0),w.Group?.CountOfStudents??0
                     , (lowerD == "государственный экзамен бакалавров" ? w.GetValueByEmployeeId(employee.Id) : 0) 
                     + (lowerD == "работа гак" ? w.GetValueByEmployeeId(employee.Id) : 0)
-                    + (lowerD == "диссертация бакалавры" || lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак" ? 0 : w.Value1)
+                    + (/*lowerD == "диссертация бакалавры" ||*/ lowerD == "государственный экзамен бакалавров" || lowerD == "работа гак" ? 0 : w.Value1)
                     ,GetInt(w.Semester.IsAutumn)
                     );
             }

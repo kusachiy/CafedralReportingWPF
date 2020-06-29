@@ -54,7 +54,7 @@ namespace CafedralReportingWPF.Views
             var workflows = WorkflowStaticWorker.GetAllWorkflowBySemesterAndYear(context,isAutumn,year.Id);
             var statics = context.StaticWorkflows.Include(s => s.Employee).Include(s => s.Employee2).Include(s => s.Employee3).Include(s => s.Employee4).Include(s => s.Employee5)
                 .Include(s => s.Agreement).Include(s => s.Semester)
-                .Where(s => s.IsEnabled).ToList();
+                .Where(s => s.IsEnabled && s.Semester.IsAutumn == isAutumn).ToList();
 
             DatatableDataImporter.FillSemesterDataset(dataset.DataTable1, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
 
