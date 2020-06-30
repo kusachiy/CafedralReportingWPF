@@ -37,9 +37,9 @@ namespace CafedralReportingWPF.Models
         [ForeignKey("AgreementId")]
         public Agreement Agreement { get; set; }
 
-        public Semester Semester => Discipline.ReadInSemester;
-        public bool IsMultiEmployee => Discipline.IsMultiEmployee;
-        public bool IsSingleEmployee => !Discipline.IsMultiEmployee;
+        public Semester Semester => Discipline?.ReadInSemester;
+        public bool IsMultiEmployee => Discipline?.IsMultiEmployee ?? false;
+        public bool IsSingleEmployee => !Discipline?.IsMultiEmployee ?? false;
 
     }
 }

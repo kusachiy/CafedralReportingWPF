@@ -27,6 +27,8 @@ namespace CafedralReportingWPF.Models
         public float Value5 { get; set; }
 
         public bool Zachet { get; set; }
+        public bool NIR { get; set; }
+
 
         public int? EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]

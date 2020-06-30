@@ -30,7 +30,8 @@ namespace CafedralReportingWPF.Helpers
 
                     , w.Group.EntryYear
                     , w.Lectures
-                    ,w.Group.CountOfStudents);
+                    ,w.Group.CountOfStudents
+                    ,w.Discipline.DisciplineName.Contains("аспирант")?"асп":w.Semester.Course>4? "маг": "бак");
 
             }
             foreach (var w in statics)
@@ -48,6 +49,7 @@ namespace CafedralReportingWPF.Helpers
                     , w.Group.EntryYear
                     ,0
                     , w.Group.CountOfStudents
+                    , w.DisciplineName.Contains("аспирант") ? "асп" : w.Semester.Course > 4 ? "маг" : "бак"
                     );
             }
         }

@@ -42,6 +42,7 @@
                     Foreground="#FF878787"
                     Header="Номер семестра" />
                 <DataGridTextColumn Binding="{Binding CountOfWeeks}" Header="Число недель" />
+                <DataGridTextColumn Binding="{Binding Course}" Header="Учебный курс" />
             </DataGrid.Columns>
         </DataGrid>
 

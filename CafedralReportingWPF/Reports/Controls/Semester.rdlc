@@ -1207,15 +1207,14 @@
         <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Fields!Semester.Value</FilterExpression>
-            <Operator>LessThanOrEqual</Operator>
+            <FilterExpression>=Fields!Division.Value</FilterExpression>
+            <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue DataType="Integer">8</FilterValue>
+              <FilterValue>бак</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
         <Top>2.88784cm</Top>
-        <Left>0cm</Left>
         <Height>3.49333cm</Height>
         <Width>16.57204cm</Width>
         <Style>
@@ -2615,15 +2614,14 @@
         <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Fields!Semester.Value</FilterExpression>
-            <Operator>GreaterThan</Operator>
+            <FilterExpression>=Fields!Division.Value</FilterExpression>
+            <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue DataType="Integer">8</FilterValue>
+              <FilterValue>маг</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
         <Top>7.92851cm</Top>
-        <Left>0cm</Left>
         <Height>3.49333cm</Height>
         <Width>16.57204cm</Width>
         <ZIndex>3</ZIndex>
@@ -3876,10 +3874,10 @@
         <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Fields!Semester.Value</FilterExpression>
-            <Operator>GreaterThan</Operator>
+            <FilterExpression>=Fields!Division.Value</FilterExpression>
+            <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue DataType="Integer">100</FilterValue>
+              <FilterValue>асп</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
@@ -5137,10 +5135,10 @@
         <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=Fields!Semester.Value</FilterExpression>
-            <Operator>GreaterThan</Operator>
+            <FilterExpression>=Fields!Division.Value</FilterExpression>
+            <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue DataType="Integer">100</FilterValue>
+              <FilterValue>идпо</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
@@ -5778,6 +5776,10 @@
         <Field Name="CountOfStudents">
           <DataField>CountOfStudents</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Division">
+          <DataField>Division</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

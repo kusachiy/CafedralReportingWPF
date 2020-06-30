@@ -44,6 +44,7 @@ namespace CafedralReportingWPF.Views
             reportDataSource1.Name = "DataSet1"; //Name of the report dataset in our .RDLC file
             reportDataSource1.Value = dataset.DataTable1;
             _reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            _reportViewer.LocalReport.DisplayName = "Отчёт за " + (isAutumn?"осенний":"весенний") + " семестр " + " (" + yearModel.Name.Replace('/', '-') + ")";
             _reportViewer.LocalReport.ReportPath = @"./Reports/Controls/Semester.rdlc";
             dataset.EndInit();
             

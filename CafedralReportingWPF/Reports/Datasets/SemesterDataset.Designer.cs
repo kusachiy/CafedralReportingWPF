@@ -299,6 +299,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             private global::System.Data.DataColumn columnCountOfStudents;
             
+            private global::System.Data.DataColumn columnDivision;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -414,6 +416,14 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DivisionColumn {
+                get {
+                    return this.columnDivision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,7 +459,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int CountOfWeeks, string Agreement, int Semester, string StudyYear, double Total, int GroupEntryYear, int Lections, int CountOfStudents) {
+            public DataTable1Row AddDataTable1Row(string GroupName, string DisciplineName, int CountOfWeeks, string Agreement, int Semester, string StudyYear, double Total, int GroupEntryYear, int Lections, int CountOfStudents, string Division) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GroupName,
@@ -461,7 +471,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                         Total,
                         GroupEntryYear,
                         Lections,
-                        CountOfStudents};
+                        CountOfStudents,
+                        Division};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -494,6 +505,7 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 this.columnGroupEntryYear = base.Columns["GroupEntryYear"];
                 this.columnLections = base.Columns["Lections"];
                 this.columnCountOfStudents = base.Columns["CountOfStudents"];
+                this.columnDivision = base.Columns["Division"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -519,6 +531,8 @@ namespace CafedralReportingWPF.Reports.Datasets {
                 base.Columns.Add(this.columnLections);
                 this.columnCountOfStudents = new global::System.Data.DataColumn("CountOfStudents", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCountOfStudents);
+                this.columnDivision = new global::System.Data.DataColumn("Division", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDivision);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -821,6 +835,22 @@ namespace CafedralReportingWPF.Reports.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Division {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.DivisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Division\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.DivisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGroupNameNull() {
                 return this.IsNull(this.tableDataTable1.GroupNameColumn);
             }
@@ -937,6 +967,18 @@ namespace CafedralReportingWPF.Reports.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCountOfStudentsNull() {
                 this[this.tableDataTable1.CountOfStudentsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDivisionNull() {
+                return this.IsNull(this.tableDataTable1.DivisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDivisionNull() {
+                this[this.tableDataTable1.DivisionColumn] = global::System.Convert.DBNull;
             }
         }
         

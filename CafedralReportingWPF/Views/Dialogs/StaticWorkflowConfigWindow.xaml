@@ -33,6 +33,7 @@
                     Binding="{Binding DisciplineName}"
                     Header="Имя дисциплины" />
                 <DataGridCheckBoxColumn Binding="{Binding Zachet}" Header="Зачёт" />
+                <DataGridCheckBoxColumn Binding="{Binding NIR}" Header="НИР" />
                 <DataGridComboBoxColumn
                     x:Name="EmployeesCombobox"
                     Header="Employee"
