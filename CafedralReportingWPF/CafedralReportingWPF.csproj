@@ -140,7 +140,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\DatatableDataImporter.cs" />
-    <Compile Include="Helpers\ExtendedStaticWorkflow.cs" />
+    <Compile Include="Helpers\DataModel\ExtendedStaticWorkflow.cs" />
+    <Compile Include="Helpers\WorkflowCalculator.cs" />
     <Compile Include="Models\Agreement.cs" />
     <Compile Include="Models\BlacklistDiscipline.cs" />
     <Compile Include="Models\StudyGroup.cs" />
@@ -278,7 +279,7 @@
     </Compile>
     <Compile Include="Helpers\DbContextSingleton.cs" />
     <Compile Include="Helpers\FileLoader.cs" />
-    <Compile Include="Helpers\ImportWorkflowModel.cs" />
+    <Compile Include="Helpers\DataModel\ImportWorkflowModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

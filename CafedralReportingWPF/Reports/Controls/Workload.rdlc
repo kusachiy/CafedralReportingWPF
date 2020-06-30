@@ -10607,7 +10607,7 @@ Fields!Prokhnych.Value))</Value>
                               <TextRuns>
                                 <TextRun>
                                   <Value>=code.GetIntOrEmptyString(iif(Fields!IsMultiEmployee.Value=False,
-code.GetValueOrZero(iif(Fields!Assignee.Value="Югов И.В.",1,0) * Reportitems!total.Value),
+code.GetValueOrZero(iif(Fields!Assignee.Value="Югов И.О.",1,0) * Reportitems!total.Value),
 Fields!Yugov.Value))</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
@@ -10633,6 +10633,7 @@ Fields!Yugov.Value))</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -27759,7 +27760,6 @@ Fields!Vakansiya.Value))</Value>
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

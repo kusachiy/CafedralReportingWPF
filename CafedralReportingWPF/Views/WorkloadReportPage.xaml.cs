@@ -37,20 +37,21 @@ namespace CafedralReportingWPF.Views
             reportDataSource2.Value = dataset2.DataTable3;
             _reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             _reportViewer.LocalReport.DataSources.Add(reportDataSource2);
+            _reportViewer.LocalReport.DisplayName = "Нагрузка " + " (" + yearModel.Name.Replace('/', '-') + ")";
             _reportViewer.LocalReport.ReportPath = @"./Reports/Controls/Workload.rdlc";
             dataset.EndInit();
             
             var context = DbContextSingleton.GetContext();
 
             var year = context.AcademicYears.FirstOrDefault(y => y.Id == yearModel.Id);
-            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,yearModel.Id);
+            var workflows = WorkflowStaticWorker.GetAllWorkflowByYear(context,yearModel.Id).Where(w=>w.Semester.SemesterNumber<=8);
             var statics = context.StaticWorkflows.Include(s=>s.Employee).Include(s=>s.Employee2).Include(s => s.Employee3).Include(s => s.Employee4).Include(s => s.Employee5)
                 .Include(s => s.Agreement).Include(s => s.Semester)
-                .Where(s => s.IsEnabled).ToList();
+                .Where(s => s.IsEnabled&& s.Semester.SemesterNumber <= 8).ToList();
             //var ext = statics.Select(s=>new ExtendedStaticWorkflow(s,year)).ToList();
 
-            DatatableDataImporter.FillWorkloadDataset(dataset.DataTable2, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
-            DatatableDataImporter.FillWorkloadEmployee(dataset2.DataTable3, workflows, statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
+            DatatableDataImporter.FillWorkloadDataset(dataset.DataTable2, workflows.ToList(), statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
+            DatatableDataImporter.FillWorkloadEmployee(dataset2.DataTable3, workflows.ToList(), statics.Select(s => new ExtendedStaticWorkflow(s, year)).ToList());
 
 
             _reportViewer.RefreshReport();

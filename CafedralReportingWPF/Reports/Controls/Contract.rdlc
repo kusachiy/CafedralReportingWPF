@@ -43,7 +43,7 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -61,7 +61,7 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -81,7 +81,7 @@
             <LeftIndent>0cm</LeftIndent>
             <RightIndent>0cm</RightIndent>
             <Style>
-              <TextAlign>Right</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -220,13 +220,13 @@
             <LeftIndent>0cm</LeftIndent>
             <RightIndent>0cm</RightIndent>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>Федеральное государственное бюджетное образовательное учреждение высшего образования «Тверской государственный технический университет», в лице ректора Твардовского Андрея Викторовича, действующего на основании Устава университета, ОГРН № 1026900533747</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Times New Roman</FontFamily>
@@ -238,14 +238,15 @@
             </TextRuns>
             <LeftIndent>0cm</LeftIndent>
             <RightIndent>0cm</RightIndent>
+            <HangingIndent>27pt</HangingIndent>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Федеральное государственное бюджетное образовательное учреждение высшего образования «Тверской государственный технический университет», в лице ректора Твардовского Андрея Викторовича, действующего на основании Устава университета, ОГРН № 1026900533747, именуемое в дальнейшем </Value>
+                <Value>, именуемое в дальнейшем </Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontFamily>Times New Roman</FontFamily>
@@ -280,7 +281,7 @@
             <RightIndent>0cm</RightIndent>
             <HangingIndent>27pt</HangingIndent>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -300,7 +301,7 @@
             <RightIndent>0cm</RightIndent>
             <HangingIndent>27pt</HangingIndent>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
@@ -344,7 +345,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Height>6.44729cm</Height>
+        <Height>6.41201cm</Height>
         <Width>25.37354cm</Width>
         <Style>
           <Border>
@@ -8432,7 +8433,7 @@
     <Height>28.15686in</Height>
     <Style />
   </Body>
-  <Width>9.98958in</Width>
+  <Width>10.02083in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

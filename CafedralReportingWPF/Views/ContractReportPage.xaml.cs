@@ -34,6 +34,8 @@ namespace CafedralReportingWPF.Views
             reportDataSource1.Value = dataset.DataTable4;
             _reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             _reportViewer.LocalReport.ReportPath = @"./Reports/Controls/Contract.rdlc";
+            _reportViewer.LocalReport.DisplayName = "Договор " + employee.FullName + " (" + yearModel.Name.Replace('/', '-') + ")";
+
             dataset.EndInit();
             
             var context = DbContextSingleton.GetContext();
